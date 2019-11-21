@@ -54,7 +54,7 @@ const Home = ({ handleSubmit }) => {
                     Keep me signed in
                   </label>
                 </div>
-                <NavLink to="/forgorpassword" className="auth-link text-black">
+                <NavLink to="/forgotpassword" className="auth-link text-black">
                   Forgot password?
                 </NavLink>
               </div>
