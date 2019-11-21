@@ -563,6 +563,5 @@ export default function customers() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+
+export default function customers
