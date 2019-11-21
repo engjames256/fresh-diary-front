@@ -15,13 +15,13 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Sales & CRM</NavLink>
+                <NavLink to="#">Sales & CRM</NavLink>
               </li>
               <li>
-                <NavLink to="">Helpdesk</NavLink>
+                <NavLink to="#">Helpdesk</NavLink>
               </li>
               <li>
-                <NavLink to="">Website Analytics</NavLink>
+                <NavLink to="#">Website Analytics</NavLink>
               </li>
             </ul>
           </li>
@@ -32,24 +32,24 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Chat</NavLink>
+                <NavLink to="#">Chat</NavLink>
               </li>
               <li>
                 <NavLink to="#">Email</NavLink>
                 <ul>
                   <li>
-                    <NavLink to="">Inbox</NavLink>
+                    <NavLink to="#">Inbox</NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Email Read</NavLink>
+                    <NavLink to="#">Email Read</NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Compose</NavLink>
+                    <NavLink to="#">Compose</NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="">Calendar</NavLink>
+                <NavLink to="#">Calendar</NavLink>
               </li>
             </ul>
           </li>
@@ -61,80 +61,80 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Alerts </NavLink>
+                <NavLink to="#">Alerts </NavLink>
               </li>
               <li>
-                <NavLink to="">Badge </NavLink>
+                <NavLink to="#">Badge </NavLink>
               </li>
               <li>
-                <NavLink to="">Buttons </NavLink>
+                <NavLink to="#">Buttons </NavLink>
               </li>
               <li>
-                <NavLink to="">Pagination </NavLink>
+                <NavLink to="#">Pagination </NavLink>
               </li>
               <li>
-                <NavLink to="">Dropdown </NavLink>
+                <NavLink to="#">Dropdown </NavLink>
               </li>
               <li>
-                <NavLink to="accordion.html">Accordion </NavLink>
+                <NavLink to="#">Accordion </NavLink>
               </li>
               <li>
                 <NavLink to="#">Cards </NavLink>
                 <ul>
                   <li>
-                    <NavLink to="">Basic Cards </NavLink>
+                    <NavLink to="#">Basic Cards </NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Image Cards </NavLink>
+                    <NavLink to="#">Image Cards </NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Card Scroll </NavLink>
+                    <NavLink to="#">Card Scroll </NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Others </NavLink>
+                    <NavLink to="#">Others </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="">Colors </NavLink>
+                <NavLink to="#">Colors </NavLink>
               </li>
               <li>
-                <NavLink to="">Carousel </NavLink>
+                <NavLink to="#">Carousel </NavLink>
               </li>
               <li>
-                <NavLink to="">Typography </NavLink>
+                <NavLink to="#">Typography </NavLink>
               </li>
               <li>
-                <NavLink to="">List Group </NavLink>
+                <NavLink to="#">List Group </NavLink>
               </li>
               <li>
-                <NavLink to="">Media Object </NavLink>
+                <NavLink to="#">Media Object </NavLink>
               </li>
               <li>
-                <NavLink to="">Images </NavLink>
+                <NavLink to="#">Images </NavLink>
               </li>
               <li>
-                <NavLink to="">Progress </NavLink>
+                <NavLink to="#">Progress </NavLink>
               </li>
               <li>
-                <NavLink to="">Modal </NavLink>
+                <NavLink to="#">Modal </NavLink>
               </li>
               <li>
-                <NavLink to="">Spinners </NavLink>
+                <NavLink to="#">Spinners </NavLink>
               </li>
               <li>
-                <NavLink className="active" to="">
+                <NavLink className="active" to="#">
                   Navs{" "}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="">Tab </NavLink>
+                <NavLink to="#">Tab </NavLink>
               </li>
               <li>
-                <NavLink to="">Tooltip </NavLink>
+                <NavLink to="#">Tooltip </NavLink>
               </li>
               <li>
-                <NavLink to="">Popovers </NavLink>
+                <NavLink to="#">Popovers </NavLink>
               </li>
             </ul>
           </li>
@@ -145,22 +145,22 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Sweet Alert </NavLink>
+                <NavLink to="#">Sweet Alert </NavLink>
               </li>
               <li>
-                <NavLink to="">Light Box </NavLink>
+                <NavLink to="#">Light Box </NavLink>
               </li>
               <li>
-                <NavLink to="">Toast </NavLink>
+                <NavLink to="#">Toast </NavLink>
               </li>
               <li>
-                <NavLink to="">Tour </NavLink>
+                <NavLink to="#">Tour </NavLink>
               </li>
               <li>
-                <NavLink to="">Slick Slide </NavLink>
+                <NavLink to="#">Slick Slide </NavLink>
               </li>
               <li>
-                <NavLink to="">Nestable </NavLink>
+                <NavLink to="#">Nestable </NavLink>
               </li>
             </ul>
           </li>
@@ -171,94 +171,94 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Basic Form </NavLink>
+                <NavLink to="#">Basic Form </NavLink>
               </li>
               <li>
-                <NavLink to="">Custom Form </NavLink>
+                <NavLink to="#">Custom Form </NavLink>
               </li>
               <li>
-                <NavLink to="">Advanced Form </NavLink>
+                <NavLink to="#">Advanced Form </NavLink>
               </li>
               <li>
-                <NavLink to="">Datepicker </NavLink>
+                <NavLink to="#">Datepicker </NavLink>
               </li>
               <li>
-                <NavLink to="">Timepicker </NavLink>
+                <NavLink to="#">Timepicker </NavLink>
               </li>
               <li>
-                <NavLink to="">Colorpicker </NavLink>
+                <NavLink to="#">Colorpicker </NavLink>
               </li>
               <li>
-                <NavLink to="">Form Validation </NavLink>
+                <NavLink to="#">Form Validation </NavLink>
               </li>
               <li>
-                <NavLink to="">Form Wizard </NavLink>
+                <NavLink to="#">Form Wizard </NavLink>
               </li>
               <li>
-                <NavLink to="">File Upload </NavLink>
+                <NavLink to="#">File Upload </NavLink>
               </li>
               <li>
                 <NavLink to="#">CKEditor</NavLink>
                 <ul>
                   <li>
-                    <NavLink to="">Article Editor </NavLink>
+                    <NavLink to="#">Article Editor </NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Inline Editor </NavLink>
+                    <NavLink to="#">Inline Editor </NavLink>
                   </li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <NavLink to="">
-              <i className=""></i>
+            <NavLink to="#">
+              <i className="icon fa fa-table"></i>
               <span>Tables</span>
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Basic Tables </NavLink>
+                <NavLink to="#">Basic Tables </NavLink>
               </li>
               <li>
-                <NavLink to="">Data Table </NavLink>
+                <NavLink to="#">Data Table </NavLink>
               </li>
               <li>
-                <NavLink to="">Responsive Table </NavLink>
+                <NavLink to="#">Responsive Table </NavLink>
               </li>
             </ul>
           </li>
           <li>
-            <NavLink to="">
+            <NavLink to="#">
               <i className="icon fa fa-user-circle-o"></i>
               <span>Avatars</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="">
+            <NavLink to="icons.html">
               <i className="icon ti-crown"></i>
               <span>Icons</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="">
+            <NavLink to="#">
               <i className="icon ti-pie-chart"></i>
               <span>Charts</span>
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Apex</NavLink>
+                <NavLink to="#">Apex</NavLink>
               </li>
               <li>
-                <NavLink to="">Chartjs</NavLink>
+                <NavLink to="#">Chartjs</NavLink>
               </li>
               <li>
-                <NavLink to="">Justgage</NavLink>
+                <NavLink to="#">Justgage</NavLink>
               </li>
               <li>
-                <NavLink to="">Morsis</NavLink>
+                <NavLink to="#">Morsis</NavLink>
               </li>
               <li>
-                <NavLink to="">Peity</NavLink>
+                <NavLink to="#">Peity</NavLink>
               </li>
             </ul>
           </li>
@@ -269,10 +269,10 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Google Map</NavLink>
+                <NavLink to="#">Google Map</NavLink>
               </li>
               <li>
-                <NavLink to="">Vector Map</NavLink>
+                <NavLink to="#">Vector Map</NavLink>
               </li>
             </ul>
           </li>
@@ -283,16 +283,16 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Login </NavLink>
+                <NavLink to="#">Login </NavLink>
               </li>
               <li>
-                <NavLink to="">Register </NavLink>
+                <NavLink to="#">Register </NavLink>
               </li>
               <li>
-                <NavLink to="">Recovery Password </NavLink>
+                <NavLink to="#">Recovery Password </NavLink>
               </li>
               <li>
-                <NavLink to="">Lock Screen </NavLink>
+                <NavLink to="#">Lock Screen </NavLink>
               </li>
             </ul>
           </li>
@@ -303,31 +303,31 @@ export default function SideBar() {
             </NavLink>
             <ul>
               <li>
-                <NavLink to="">Profile </NavLink>
+                <NavLink to="#">Profile </NavLink>
               </li>
               <li>
-                <NavLink to="">Timeline </NavLink>
+                <NavLink to="#">Timeline </NavLink>
               </li>
               <li>
-                <NavLink to="">Invoice </NavLink>
+                <NavLink to="#">Invoice </NavLink>
               </li>
               <li>
-                <NavLink to="">Pricing Tables </NavLink>
+                <NavLink to="#">Pricing Tables </NavLink>
               </li>
               <li>
-                <NavLink to="">Search Result </NavLink>
+                <NavLink to="#">Search Result </NavLink>
               </li>
               <li>
                 <NavLink to="#">Email Templates</NavLink>
                 <ul>
                   <li>
-                    <NavLink to="">Basic</NavLink>
+                    <NavLink to="#">Basic</NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Alert</NavLink>
+                    <NavLink to="#">Alert</NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Billing</NavLink>
+                    <NavLink to="#">Billing</NavLink>
                   </li>
                 </ul>
               </li>
@@ -335,18 +335,18 @@ export default function SideBar() {
                 <NavLink to="#">Error Pages </NavLink>
                 <ul>
                   <li>
-                    <NavLink to="">404 </NavLink>
+                    <NavLink to="#">404 </NavLink>
                   </li>
                   <li>
-                    <NavLink to="">404 Alternative </NavLink>
+                    <NavLink to="#">404 Alternative </NavLink>
                   </li>
                   <li>
-                    <NavLink to="">Mean at Work </NavLink>
+                    <NavLink to="#">Mean at Work </NavLink>
                   </li>
                 </ul>
               </li>
               <li>
-                <NavLink to="">Starter Page</NavLink>
+                <NavLink to="#">Starter Page</NavLink>
               </li>
             </ul>
           </li>
