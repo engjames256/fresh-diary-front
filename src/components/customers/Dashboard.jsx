@@ -1,6 +1,7 @@
 import React from "react";
 import Customers from "./Customers";
 import Arts from "../art/Art";
+import UsersComponent from "../../components/users/ViewUsers"
 
 export default function Test() {
   return (
@@ -84,7 +85,7 @@ export default function Test() {
                 role="tabpanel"
                 aria-labelledby="v-pills-messages-tab"
               >
-                Two
+                <UsersComponent/>
               </div>
               <div
                 class="tab-pane fade"
