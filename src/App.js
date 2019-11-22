@@ -8,14 +8,13 @@ import Products from "./containers/products/Products";
 import Customers from "./containers/customers/Customers";
 import Art from "./containers/art/Art";
 import TopNav from "./containers/commons/TopNav";
-import SideBar from "./components/commons/SideBar";
+import Dashboard from "./components/customers/Dashboard";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
-          <SideBar />
           <TopNav />
           <Switch>
             <Route path="/" exact component={Login} />
@@ -24,6 +23,7 @@ class App extends Component {
             <Route path="/products" exact component={Products} />
             <Route path="/customers" exact component={Customers} />
             <Route path="/arts" exact component={Art} />
+            <Route path="/dashboard" exact component={Dashboard} />
           </Switch>
         </Router>
       </div>

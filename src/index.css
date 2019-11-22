@@ -1,0 +1,15 @@
+.main-dashboard,
+body {
+  background-color: #f0f0f0;
+  border: 0 !important;
+}
+.main-body {
+  padding-left: 0 !important;
+}
+.left-body {
+  padding-right: 0 !important;
+}
+.logo-fresh {
+  width: 20px;
+  height: 50px;
+}

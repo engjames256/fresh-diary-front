@@ -5,10 +5,6 @@ const Home = ({ handleSubmit }) => {
   return (
     <div className="bg-white h-100-vh p-t-0">
       <div className="p-b-50 d-block d-lg-none"></div>
-      <div className="page-loader">
-        <div className="spinner-border"></div>
-        <span>Loading</span>
-      </div>
 
       <div className="container h-100-vh">
         <div className="row align-items-md-center h-100-vh">

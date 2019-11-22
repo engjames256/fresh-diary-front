@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/images/fresh-diary.png";
 
 export default function TopNav() {
   return (
     <nav class="navbar">
       <div class="container-fluid">
         <div class="header-logo">
-          <NavLink href="#">
-            <span className="h2">Fresh Diary</span>
+          <NavLink to="#">
+            <img src={logo} alt="logo" className="logo-fresh" />
           </NavLink>
         </div>
 
@@ -39,14 +40,14 @@ export default function TopNav() {
           <ul class="navbar-nav">
             <li class="nav-item">
               <NavLink
-                href="#"
+                to="#"
                 class="d-lg-none d-sm-block nav-link search-panel-open"
               >
                 <i class="fa fa-search"></i>
               </NavLink>
             </li>
             <li class="nav-item dropdown">
-              <NavLink href="#" class="nav-link" data-toggle="dropdown">
+              <NavLink to="#" class="nav-link" data-toggle="dropdown">
                 <i class="fa fa-user-o"></i>
               </NavLink>
               <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
@@ -82,11 +83,11 @@ export default function TopNav() {
                     </div>
                   </div>
                   <ul class="list-group list-group-flush">
-                    <NavLink href="#" class="list-group-item link-2">
+                    <NavLink to="#" class="list-group-item link-2">
                       Profile
                     </NavLink>
                     <NavLink
-                      href="#"
+                      to="#"
                       class="list-group-item link-2 sidebar-open"
                       data-sidebar-target="#settings"
                     >
@@ -100,7 +101,7 @@ export default function TopNav() {
               </div>
             </li>
             <li class="nav-item d-lg-none d-sm-block">
-              <NavLink href="#" class="nav-link side-menu-open">
+              <NavLink to="#" class="nav-link side-menu-open">
                 <i class="ti-menu"></i>
               </NavLink>
             </li>
