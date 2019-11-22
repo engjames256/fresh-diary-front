@@ -1,9 +1,9 @@
 import React from "react";
 import Customers from "./Customers";
 import Arts from "../art/Art";
-import UsersComponent from "../../components/users/ViewUsers"
+import UsersComponent from "../../components/users/ViewUsers";
 
-export default function Test() {
+export default function Dashboard({ handleInputChange, state, handleSubmit }) {
   return (
     <div class="card main-dashboard">
       <div class="card-body">
@@ -85,7 +85,11 @@ export default function Test() {
                 role="tabpanel"
                 aria-labelledby="v-pills-messages-tab"
               >
-                <UsersComponent/>
+                <UsersComponent
+                  handleInputChange={handleInputChange}
+                  state={state}
+                  handleSubmit={handleSubmit}
+                />
               </div>
               <div
                 class="tab-pane fade"
