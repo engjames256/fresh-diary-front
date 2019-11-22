@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { HashRouter as Router, Switch } from "react-router-dom";
 import { Route } from "react-router";
 import Login from "./containers/auth/Login";
-import ForgotPassword from "./containers/forgotPassword/ForgotPassword"
+import ForgotPassword from "./containers/forgotPassword/ForgotPassword";
 import Register from "./containers/register/Register";
 import Products from "./containers/products/Products";
 import Customers from "./containers/customers/Customers";
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <SideBar/>
+          <SideBar />
           <TopNav />
           <Switch>
             <Route path="/" exact component={Login} />
@@ -23,7 +23,7 @@ class App extends Component {
             <Route path="/forgotpassword" exact component={ForgotPassword} />
             <Route path="/products" exact component={Products} />
             <Route path="/customers" exact component={Customers} />
-            <Route path="/art" exact component={Art} />
+            <Route path="/arts" exact component={Art} />
           </Switch>
         </Router>
       </div>
