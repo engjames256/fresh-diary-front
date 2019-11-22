@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Home = ({ handleSubmit }) => {
+const Home = ({
+  handleSubmit,
+  handleInputChange,
+  state: { username, password }
+}) => {
   return (
     <div className="bg-white h-100-vh p-t-0">
       <div className="p-b-50 d-block d-lg-none"></div>
@@ -27,6 +31,9 @@ const Home = ({ handleSubmit }) => {
                   id="exampleInputEmail1"
                   autofocus
                   placeholder="Email or username"
+                  name="username"
+                  onChange={handleInputChange}
+                  value={username}
                 />
               </div>
               <div className="form-group mb-4">
@@ -35,6 +42,9 @@ const Home = ({ handleSubmit }) => {
                   className="form-control form-control-lg"
                   id="exampleInputPassword1"
                   placeholder="Password"
+                  name="password"
+                  onChange={handleInputChange}
+                  value={password}
                 />
               </div>
               <button

@@ -23,7 +23,7 @@ export default class Dashboard extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const url = `${baseURL}user`;
-    const { username, password, fullName, reTypePassword } = this.state;
+    const { username, password, fullName } = this.state;
     const data = {
       username: username,
       password: password,

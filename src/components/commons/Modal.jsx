@@ -1,64 +1,65 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Modal() {
   return (
-    <main class="main-content">
-      <div class="container">
-        <div class="page-header">
+    <main className="main-content">
+      <div className="container">
+        <div className="page-header">
           <h3>Modal</h3>
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <NavLink to="#">Dashboard</NavLink>
               </li>
-              <li class="breadcrumb-item">
-                <a href="#">Basic Elements</a>
+              <li className="breadcrumb-item">
+                <NavLink to="#">Basic Elements</NavLink>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 Modal
               </li>
             </ol>
           </nav>
         </div>
 
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h6 class="card-title">Scrolling long content</h6>
-                <div class="text-center">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="card">
+              <div className="card-body">
+                <h6 className="card-title">Scrolling long content</h6>
+                <div className="text-center">
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-toggle="modal"
                     data-target="#exampleModalLong"
                   >
                     Launch demo modal
                   </button>
                   <div
-                    class="modal fade"
+                    className="modal fade"
                     id="exampleModalLong"
                     tabindex="-1"
                     role="dialog"
                     aria-labelledby="exampleModalLongTitle"
                     aria-hidden="true"
                   >
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">
+                    <div className="modal-dialog" role="document">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalLongTitle">
                             Modal title
                           </h5>
                           <button
                             type="button"
-                            class="close"
+                            className="close"
                             data-dismiss="modal"
                             aria-label="Close"
                           >
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                           Lorem ipsum dolor sit amet, consectetur adipisicing
                           elit. Ab amet, atque autem, commodi consequatur
                           corporis cumque ea eligendi esse ex facere fugit harum
@@ -106,15 +107,15 @@ export default function Modal() {
                           reiciendis similique sit tempore velit voluptate
                           voluptates!
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                           <button
                             type="button"
-                            class="btn btn-secondary"
+                            className="btn btn-secondary"
                             data-dismiss="modal"
                           >
                             Close
                           </button>
-                          <button type="button" class="btn btn-primary">
+                          <button type="button" className="btn btn-primary">
                             Save changes
                           </button>
                         </div>
@@ -125,21 +126,21 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h6 class="card-title">Vertically centered</h6>
-                <div class="text-center">
+          <div className="col-md-4">
+            <div className="card">
+              <div className="card-body">
+                <h6 className="card-title">Vertically centered</h6>
+                <div className="text-center">
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-toggle="modal"
                     data-target="#exampleModalCenter"
                   >
                     Launch demo modal
                   </button>
                   <div
-                    class="modal fade"
+                    className="modal fade"
                     id="exampleModalCenter"
                     tabindex="-1"
                     role="dialog"
@@ -147,33 +148,33 @@ export default function Modal() {
                     aria-hidden="true"
                   >
                     <div
-                      class="modal-dialog modal-dialog-centered"
+                      className="modal-dialog modal-dialog-centered"
                       role="document"
                     >
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalCenterTitle">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="exampleModalCenterTitle">
                             Modal title
                           </h5>
                           <button
                             type="button"
-                            class="close"
+                            className="close"
                             data-dismiss="modal"
                             aria-label="Close"
                           >
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">...</div>
-                        <div class="modal-footer">
+                        <div className="modal-body">...</div>
+                        <div className="modal-footer">
                           <button
                             type="button"
-                            class="btn btn-secondary"
+                            className="btn btn-secondary"
                             data-dismiss="modal"
                           >
                             Close
                           </button>
-                          <button type="button" class="btn btn-primary">
+                          <button type="button" className="btn btn-primary">
                             Save changes
                           </button>
                         </div>
@@ -184,14 +185,14 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h6 class="card-title">Using the grid</h6>
-                <div class="text-center">
+          <div className="col-md-4">
+            <div className="card">
+              <div className="card-body">
+                <h6 className="card-title">Using the grid</h6>
+                <div className="text-center">
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-toggle="modal"
                     data-target="#gridSystemModal"
                   >
@@ -199,56 +200,56 @@ export default function Modal() {
                   </button>
                   <div
                     id="gridSystemModal"
-                    class="modal fade"
+                    className="modal fade"
                     tabindex="-1"
                     role="dialog"
                     aria-labelledby="gridModalLabel"
                     aria-hidden="true"
                   >
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="gridModalLabel">
+                    <div className="modal-dialog" role="document">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h5 className="modal-title" id="gridModalLabel">
                             Grids in modals
                           </h5>
                           <button
                             type="button"
-                            class="close"
+                            className="close"
                             data-dismiss="modal"
                             aria-label="Close"
                           >
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
-                          <div class="container-fluid bd-example-row">
-                            <div class="row">
-                              <div class="col-md-4">.col-md-4</div>
-                              <div class="col-md-4 ml-auto">
+                        <div className="modal-body">
+                          <div className="container-fluid bd-example-row">
+                            <div className="row">
+                              <div className="col-md-4">.col-md-4</div>
+                              <div className="col-md-4 ml-auto">
                                 .col-md-4 .ml-auto
                               </div>
                             </div>
-                            <div class="row">
-                              <div class="col-md-3 ml-auto">
+                            <div className="row">
+                              <div className="col-md-3 ml-auto">
                                 .col-md-3 .ml-auto
                               </div>
-                              <div class="col-md-2 ml-auto">
+                              <div className="col-md-2 ml-auto">
                                 .col-md-2 .ml-auto
                               </div>
                             </div>
-                            <div class="row">
-                              <div class="col-md-6 ml-auto">
+                            <div className="row">
+                              <div className="col-md-6 ml-auto">
                                 .col-md-6 .ml-auto
                               </div>
                             </div>
-                            <div class="row">
-                              <div class="col-sm-9">
+                            <div className="row">
+                              <div className="col-sm-9">
                                 Level 1: .col-sm-9
-                                <div class="row">
-                                  <div class="col-8 col-sm-6">
+                                <div className="row">
+                                  <div className="col-8 col-sm-6">
                                     Level 2: .col-8 .col-sm-6
                                   </div>
-                                  <div class="col-4 col-sm-6">
+                                  <div className="col-4 col-sm-6">
                                     Level 2: .col-4 .col-sm-6
                                   </div>
                                 </div>
@@ -256,15 +257,15 @@ export default function Modal() {
                             </div>
                           </div>
                         </div>
-                        <div class="modal-footer">
+                        <div className="modal-footer">
                           <button
                             type="button"
-                            class="btn btn-secondary"
+                            className="btn btn-secondary"
                             data-dismiss="modal"
                           >
                             Close
                           </button>
-                          <button type="button" class="btn btn-primary">
+                          <button type="button" className="btn btn-primary">
                             Save changes
                           </button>
                         </div>
@@ -277,16 +278,16 @@ export default function Modal() {
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <h6 class="card-title">Optional sizes</h6>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-body">
+                <h6 className="card-title">Optional sizes</h6>
 
-                <div class="text-center">
+                <div className="text-center">
                   <button
                     type="button"
-                    class="btn btn-primary m-r-5"
+                    className="btn btn-primary m-r-5"
                     data-toggle="modal"
                     data-target=".bd-example-modal-xl"
                   >
@@ -294,7 +295,7 @@ export default function Modal() {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-primary m-r-5"
+                    className="btn btn-primary m-r-5"
                     data-toggle="modal"
                     data-target=".bd-example-modal-lg"
                   >
@@ -302,7 +303,7 @@ export default function Modal() {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-toggle="modal"
                     data-target=".bd-example-modal-sm"
                   >
@@ -311,35 +312,35 @@ export default function Modal() {
                 </div>
 
                 <div
-                  class="modal fade bd-example-modal-xl"
+                  className="modal fade bd-example-modal-xl"
                   tabindex="-1"
                   role="dialog"
                   aria-labelledby="myExtraLargeModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title">Extra large modal</h6>
+                  <div className="modal-dialog modal-xl">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h6 className="modal-title">Extra large modal</h6>
                         <button
                           type="button"
-                          class="close"
+                          className="close"
                           data-dismiss="modal"
                           aria-label="Close"
                         >
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">...</div>
-                      <div class="modal-footer">
+                      <div className="modal-body">...</div>
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-dismiss="modal"
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" className="btn btn-primary">
                           Save changes
                         </button>
                       </div>
@@ -348,35 +349,35 @@ export default function Modal() {
                 </div>
 
                 <div
-                  class="modal fade bd-example-modal-lg"
+                  className="modal fade bd-example-modal-lg"
                   tabindex="-1"
                   role="dialog"
                   aria-labelledby="myLargeModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title">Large modal</h6>
+                  <div className="modal-dialog modal-lg">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h6 className="modal-title">Large modal</h6>
                         <button
                           type="button"
-                          class="close"
+                          className="close"
                           data-dismiss="modal"
                           aria-label="Close"
                         >
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">...</div>
-                      <div class="modal-footer">
+                      <div className="modal-body">...</div>
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-dismiss="modal"
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" className="btn btn-primary">
                           Save changes
                         </button>
                       </div>
@@ -385,35 +386,35 @@ export default function Modal() {
                 </div>
 
                 <div
-                  class="modal fade bd-example-modal-sm"
+                  className="modal fade bd-example-modal-sm"
                   tabindex="-1"
                   role="dialog"
                   aria-labelledby="mySmallModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h6 class="modal-title">Small modal</h6>
+                  <div className="modal-dialog modal-sm">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h6 className="modal-title">Small modal</h6>
                         <button
                           type="button"
-                          class="close"
+                          className="close"
                           data-dismiss="modal"
                           aria-label="Close"
                         >
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">...</div>
-                      <div class="modal-footer">
+                      <div className="modal-body">...</div>
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-dismiss="modal"
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" className="btn btn-primary">
                           Save changes
                         </button>
                       </div>
@@ -423,15 +424,15 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <h6 class="card-title">Varying modal content</h6>
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-body">
+                <h6 className="card-title">Varying modal content</h6>
 
-                <div class="text-center">
+                <div className="text-center">
                   <button
                     type="button"
-                    class="btn btn-primary m-r-5"
+                    className="btn btn-primary m-r-5"
                     data-toggle="modal"
                     data-target="#exampleModal"
                     data-whatever="@mdo"
@@ -440,7 +441,7 @@ export default function Modal() {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-primary m-r-5"
+                    className="btn btn-primary m-r-5"
                     data-toggle="modal"
                     data-target="#exampleModal"
                     data-whatever="@fat"
@@ -449,7 +450,7 @@ export default function Modal() {
                   </button>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-toggle="modal"
                     data-target="#exampleModal"
                     data-whatever="@getbootstrap"
@@ -459,60 +460,60 @@ export default function Modal() {
                 </div>
 
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="exampleModal"
                   tabindex="-1"
                   role="dialog"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
+                  <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLabel">
                           New message
                         </h5>
                         <button
                           type="button"
-                          class="close"
+                          className="close"
                           data-dismiss="modal"
                           aria-label="Close"
                         >
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         <form>
-                          <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">
+                          <div className="form-group">
+                            <label for="recipient-name" className="col-form-label">
                               Recipient:
                             </label>
                             <input
                               type="text"
-                              class="form-control"
+                              className="form-control"
                               id="recipient-name"
                             />
                           </div>
-                          <div class="form-group">
-                            <label for="message-text" class="col-form-label">
+                          <div className="form-group">
+                            <label for="message-text" className="col-form-label">
                               Message:
                             </label>
                             <textarea
-                              class="form-control"
+                              className="form-control"
                               id="message-text"
                             ></textarea>
                           </div>
                         </form>
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-dismiss="modal"
                         >
                           Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" className="btn btn-primary">
                           Send message
                         </button>
                       </div>
