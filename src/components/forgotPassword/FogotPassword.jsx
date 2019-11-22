@@ -4,11 +4,6 @@ import { NavLink } from "react-router-dom";
 export default function ForgotPassword() {
   return (
     <div class="bg-white h-100-vh p-t-0">
-      <div class="p-b-50 d-block d-lg-none"></div>
-      <div className="page-loader">
-        <div className="spinner-border"></div>
-        <span>Loading</span>
-      </div>
 
       <div class="container h-100-vh">
         <div class="row align-items-md-center h-100-vh">
