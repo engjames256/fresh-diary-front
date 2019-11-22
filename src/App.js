@@ -6,6 +6,7 @@ import ForgotPassword from "./containers/forgotPassword/ForgotPassword"
 import Register from "./containers/register/Register";
 import Products from "./containers/products/Products";
 import Customers from "./containers/customers/Customers";
+import Art from "./containers/art/Art";
 import TopNav from "./containers/commons/TopNav";
 import SideBar from "./components/commons/SideBar";
 
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/forgotpassword" exact component={ForgotPassword} />
             <Route path="/products" exact component={Products} />
             <Route path="/customers" exact component={Customers} />
+            <Route path="/art" exact component={Art} />
           </Switch>
         </Router>
       </div>

@@ -27,17 +27,15 @@ export default function customers() {
 
             <div className="card">
               <div className="card-body">
-                <table
-                  id="example1"
-                  className="table table-striped table-bordered"
-                >
+                <table id="example1" className="table table-striped table-bordered">
                   <thead>
                     <tr>
-                      <th>Reciept Number</th>
+                      <th>Reciept No.</th>
                       <th>Product Name</th>
+                      <th>Office</th>
                       <th>First Name</th>
                       <th>Last Name</th>
-                      <th>Outlet</th>
+                      <th>Output</th>
                       <th>Location</th>
                       <th>Contact</th>
                     </tr>
@@ -563,5 +561,6 @@ export default function customers() {
           </div>
         </div>
       </div>
-
-export default function customers
+    </div>
+  );
+}
