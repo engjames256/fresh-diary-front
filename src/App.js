@@ -8,7 +8,7 @@ import Products from "./containers/products/ProductItems";
 import Customers from "./containers/customers/Customers";
 import Art from "./containers/art/Art";
 import TopNav from "./containers/commons/TopNav";
-import Dashboard from "./components/customers/Dashboard";
+import Dashboard from "./containers/customers/Dashboard";
 import Modal from "./components/commons/Modal";
 
 class App extends Component {

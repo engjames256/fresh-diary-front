@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function viewUsers() {
+export default function viewUsers({
+  handleInputChange,
+  state: { username, fullName, password, reTypePassword, systemUsers },
+  handleSubmit
+}) {
   return (
     <div className="main-content">
       {/* Add Users Modal */}
@@ -37,6 +41,9 @@ export default function viewUsers() {
                       className="form-control form-control-lg"
                       autofocus
                       placeholder="Username"
+                      name="username"
+                      value={username}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div className="col-md-6 form-group mb-4">
@@ -44,6 +51,9 @@ export default function viewUsers() {
                       type="text"
                       className="form-control form-control-lg"
                       placeholder="Full Name"
+                      name="fullName"
+                      value={fullName}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -54,6 +64,9 @@ export default function viewUsers() {
                         type="password"
                         className="form-control form-control-lg"
                         placeholder="Password"
+                        name="password"
+                        value={password}
+                        onChange={handleInputChange}
                       />
                     </div>
                   </div>
@@ -63,11 +76,17 @@ export default function viewUsers() {
                         type="password"
                         className="form-control form-control-lg"
                         placeholder="Retype Password"
+                        name="reTypePassword"
+                        value={reTypePassword}
+                        onChange={handleInputChange}
                       />
                     </div>
                   </div>
                 </div>
-                <button className="btn btn-primary btn-lg btn-block btn-uppercase mb-4">
+                <button
+                  className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
+                  onClick={handleSubmit}
+                >
                   Create User
                 </button>
               </form>
@@ -114,43 +133,13 @@ export default function viewUsers() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                </tr>
-                <tr>
-                  <td>Timothy Mooney</td>
-                  <td>Office Manager</td>
-                </tr>
-                <tr>
-                  <td>Jackson Bradshaw</td>
-                  <td>Director</td>
-                </tr>
-                <tr>
-                  <td>Olivia Liang</td>
-                  <td>Support Engineer</td>
-                </tr>
-                <tr>
-                  <td>Bruno Nash</td>
-                  <td>Software Engineer</td>
-                </tr>
-                <tr>
-                  <td>Sakura Yamamoto</td>
-                  <td>Support Engineer</td>
-                </tr>
-                <tr>
-                  <td>Thor Walton</td>
-                  <td>Developer</td>
-                </tr>
-                <tr>
-                  <td>Finn Camacho</td>
-                  <td>Support Engineer</td>
-                </tr>
-
-                <tr>
-                  <td>Jonas Alexander</td>
-                  <td>Developer</td>
-                </tr>
+                {systemUsers &&
+                  systemUsers.map(user => (
+                    <tr>
+                      <td>{user.username}</td>
+                      <td>{user.fullname}</td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
