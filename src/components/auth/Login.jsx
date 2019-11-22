@@ -4,11 +4,6 @@ import { NavLink } from "react-router-dom";
 const Home = ({ handleSubmit }) => {
   return (
     <div className="bg-white h-100-vh p-t-0">
-      <div className="page-loader">
-        <div className="spinner-border"></div>
-        <span>Loading</span>
-      </div>
-
       <div className="p-b-50 d-block d-lg-none"></div>
 
       <div className="container h-100-vh">
@@ -21,7 +16,9 @@ const Home = ({ handleSubmit }) => {
             />
           </div>
           <div className="col-lg-4 offset-lg-1">
-            <p><center>Sign in to continue.</center></p>
+            <p>
+              <center>Sign in to continue.</center>
+            </p>
             <form action="#">
               <div className="form-group mb-4">
                 <input
@@ -40,7 +37,10 @@ const Home = ({ handleSubmit }) => {
                   placeholder="Password"
                 />
               </div>
-              <button className="btn btn-primary btn-lg btn-block btn-uppercase mb-4">
+              <button
+                className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
+                onClick={handleSubmit}
+              >
                 Sign In
               </button>
               <div className="d-flex justify-content-between align-items-center mb-4">
