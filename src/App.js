@@ -4,11 +4,12 @@ import { Route } from "react-router";
 import Login from "./containers/auth/Login";
 import ForgotPassword from "./containers/forgotPassword/ForgotPassword";
 import Register from "./containers/register/Register";
-import Products from "./containers/products/Products";
+import Products from "./containers/products/ProductItems";
 import Customers from "./containers/customers/Customers";
 import Art from "./containers/art/Art";
 import TopNav from "./containers/commons/TopNav";
 import Dashboard from "./components/customers/Dashboard";
+import Modal from "./components/commons/Modal";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/customers" exact component={Customers} />
             <Route path="/arts" exact component={Art} />
             <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/modal" exact component={Modal} />
           </Switch>
         </Router>
       </div>

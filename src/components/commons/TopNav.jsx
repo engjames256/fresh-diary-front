@@ -16,7 +16,7 @@ export default function TopNav() {
           <form class="search">
             <div class="row">
               <div class="col-md-4">
-                <div class="input-group">
+                <div class="input-group search">
                   <input
                     type="text"
                     class="form-control"
