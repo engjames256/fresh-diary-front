@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 const Register = ({ handleSubmit }) => {
   return (
     <div className="bg-white h-100-vh p-t-0">
+      <div className="p-b-50 d-block d-lg-none"></div>
       <div className="page-loader">
         <div className="spinner-border"></div>
-        <span>Loading ...</span>
+        <span>Loading</span>
       </div>
-
-      <div className="p-b-50 d-block d-lg-none"></div>
 
       <div className="container h-100-vh">
         <div className="row align-items-md-center h-100-vh">
@@ -77,7 +76,7 @@ const Register = ({ handleSubmit }) => {
                 Create Account
               </button>
               <p className="text-right">
-                <NavLink to="/login" className="text-underline">
+                <NavLink to="/" className="text-underline">
                   Already a user?
                 </NavLink>
               </p>
