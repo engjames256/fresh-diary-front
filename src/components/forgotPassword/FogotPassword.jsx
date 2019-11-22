@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 export default function ForgotPassword() {
   return (
     <div class="bg-white h-100-vh p-t-0">
-
       <div class="container h-100-vh">
         <div class="row align-items-md-center h-100-vh">
           <div class="col-lg-6 d-none d-lg-block">
@@ -30,7 +29,7 @@ export default function ForgotPassword() {
                 Submit
               </button>
               <p class="text-right">
-                <NavLink to="/login" class="text-underline">
+                <NavLink to="/" class="text-underline">
                   Sign in now
                 </NavLink>
               </p>

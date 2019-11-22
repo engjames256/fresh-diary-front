@@ -5,10 +5,6 @@ const Register = ({ handleSubmit }) => {
   return (
     <div className="bg-white h-100-vh p-t-0">
       <div className="p-b-50 d-block d-lg-none"></div>
-      <div className="page-loader">
-        <div className="spinner-border"></div>
-        <span>Loading</span>
-      </div>
 
       <div className="container h-100-vh">
         <div className="row align-items-md-center h-100-vh">
@@ -34,9 +30,9 @@ const Register = ({ handleSubmit }) => {
               </div>
               <div className="form-group mb-4">
                 <input
-                  type="email"
+                  type="text"
                   className="form-control form-control-lg"
-                  placeholder="Email"
+                  placeholder="Full Name"
                 />
               </div>
               <div className="row">
