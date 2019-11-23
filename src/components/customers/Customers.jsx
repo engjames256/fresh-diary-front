@@ -33,11 +33,10 @@ export default function customers({ state: { customers } }) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
                   {customers &&
                     customers.map(user => (
                       <tr>
-                        <td>{user.recieptNumber}</td>
+                        <td>{user.receiptNumber}</td>
                         <td>{user.firstName}</td>
                         <td>{user.lastName}</td>
                         <td>{user.phoneNumber}</td>
@@ -45,7 +44,6 @@ export default function customers({ state: { customers } }) {
                         <td>{user.location}</td>
                       </tr>
                     ))}
-                </tr>
               </tbody>
             </table>
           </div>

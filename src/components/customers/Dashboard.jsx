@@ -79,7 +79,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 role="tabpanel"
                 aria-labelledby="v-pills-profile-tab"
               >
-                <Arts />
+                <Arts state={state}/>
               </div>
               <div
                 className="tab-pane fade"
