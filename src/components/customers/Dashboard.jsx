@@ -3,7 +3,12 @@ import Customers from "./Customers";
 import Arts from "../art/Art";
 import UsersComponent from "../../components/users/ViewUsers";
 
-export default function Dashboard({ handleInputChange, state, handleSubmit }) {
+export default function Dashboard({
+  handleInputChange,
+  state,
+  handleSubmit,
+  handleImageChange
+}) {
   return (
     <div className="card main-dashboard">
       <div className="card-body">
@@ -69,9 +74,11 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 role="tabpanel"
                 aria-labelledby="v-pills-home-tab"
               >
-                <Customers handleInputChange={handleInputChange}
+                <Customers
+                  handleInputChange={handleInputChange}
                   state={state}
-                  handleSubmit={handleSubmit}/>
+                  handleSubmit={handleSubmit}
+                />
               </div>
               <div
                 className="tab-pane fade"
@@ -79,7 +86,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 role="tabpanel"
                 aria-labelledby="v-pills-profile-tab"
               >
-                <Arts state={state}/>
+                <Arts handleImageChange={handleImageChange} state={state} />
               </div>
               <div
                 className="tab-pane fade"

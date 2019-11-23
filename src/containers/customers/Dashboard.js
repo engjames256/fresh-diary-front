@@ -10,7 +10,10 @@ export default class Dashboard extends Component {
     reTypePassword: "",
     systemUsers: [],
     customers: [],
-    products: []
+    products: [],
+    file: "",
+    imagePreviewUrl: "",
+    productName: ""
   };
 
   componentWillMount = () => {
@@ -18,7 +21,7 @@ export default class Dashboard extends Component {
     this.retrieveAllCustomers();
     this.retrieveAllProducts();
   };
-  
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -50,6 +53,22 @@ export default class Dashboard extends Component {
         });
         this.retrieveAllUsers();
       });
+  };
+
+  handleImageChange = event => {
+    event.preventDefault();
+    let reader = new FileReader();
+    let file = event.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result
+      });
+    };
+
+    reader.readAsDataURL(file);
+    console.log(this.state);
   };
 
   retrieveAllUsers = () => {
@@ -84,6 +103,31 @@ export default class Dashboard extends Component {
         this.setState({ products: data });
       });
   };
+  handleSubmitArt = event => {
+    event.preventDefault();
+    const url = `${baseURL}fresh/v1/add/products`;
+    const { productName, imagePreviewUrl } = this.state;
+    const data = {
+      productName,
+      productAWSLink: imagePreviewUrl
+    };
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          productName: "",
+          imagePreviewUrl: ""
+        });
+      });
+  };
+
   render() {
     return (
       <Fragment>
@@ -91,6 +135,7 @@ export default class Dashboard extends Component {
           handleInputChange={this.handleInputChange}
           state={this.state}
           handleSubmit={this.handleSubmit}
+          handleImageChange={this.handleImageChange}
         />
       </Fragment>
     );
