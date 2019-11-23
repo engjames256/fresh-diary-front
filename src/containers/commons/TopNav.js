@@ -7,7 +7,7 @@ class TopNav extends Component {
   render() {
     const { location } = this.props;
     if (isFramelessPage(location.pathname)) {
-      return null;
+      return <TopNavComponent />;
     }
     return (
       <Fragment>

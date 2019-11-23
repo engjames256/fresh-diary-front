@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 const Home = ({
   handleSubmit,
@@ -64,16 +63,6 @@ const Home = ({
                     Keep me signed in
                   </label>
                 </div>
-                <NavLink to="/forgotpassword" className="auth-link text-black">
-                  Forgot password?
-                </NavLink>
-              </div>
-
-              <div className="text-center">
-                Don't have an account?{" "}
-                <NavLink to="/register" className="text-primary">
-                  Create
-                </NavLink>
               </div>
             </form>
           </div>

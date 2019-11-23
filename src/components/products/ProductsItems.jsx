@@ -2,7 +2,7 @@ import React from "react";
 import testImage from "../../assets/images/test-image.png";
 import QRCode from "../../assets/images/MyQRCode.png";
 
-export default function ProductsItems() {
+export default function ProductsItems({handleInputChange, handleSubmit, state:{firstName, lastName, outlet, location, phoneNumber, recieptNumber}}) {
   return (
     <div class="row row-sm">
       {/* Small Modal For QR Code */}
@@ -64,14 +64,20 @@ export default function ProductsItems() {
                       type="text"
                       className="form-control form-control-lg"
                       autofocus
-                      placeholder="Username"
+                      placeholder="First Name"
+                      name="firstName"
+                      value={firstName}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div className="col-md-6 form-group mb-4">
                     <input
                       type="text"
                       className="form-control form-control-lg"
-                      placeholder="Full Name"
+                      placeholder="Last Name"
+                      name="lastName"
+                      value={lastName}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -81,14 +87,20 @@ export default function ProductsItems() {
                       type="text"
                       className="form-control form-control-lg"
                       autofocus
-                      placeholder="Username"
+                      placeholder="Outlet"
+                      name="outlet"
+                      value={outlet}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div className="col-md-6 form-group mb-4">
                     <input
                       type="text"
                       className="form-control form-control-lg"
-                      placeholder="Full Name"
+                      placeholder="Location"
+                      name="location"
+                      value={location}
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -96,23 +108,29 @@ export default function ProductsItems() {
                   <div className="col-md-6">
                     <div className="form-group mb-4">
                       <input
-                        type="password"
+                        type="text"
                         className="form-control form-control-lg"
-                        placeholder="Password"
+                        placeholder="Phone Number"
+                        name="phoneNumber"
+                        value={phoneNumber}
+                        onChange={handleInputChange}
                       />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="form-group mb-4">
                       <input
-                        type="password"
+                        type="text"
                         className="form-control form-control-lg"
-                        placeholder="Password"
+                        placeholder="Reciept Number"
+                        name="recieptNumber"
+                        value={recieptNumber}
+                        onChange={handleInputChange}
                       />
                     </div>
                   </div>
                 </div>
-                <button className="btn btn-primary btn-lg btn-block btn-uppercase mb-4">
+                <button className="btn btn-primary btn-lg btn-block btn-uppercase mb-4" onClick={handleSubmit}>
                   Enter Draw
                 </button>
               </form>
@@ -447,7 +465,6 @@ export default function ProductsItems() {
           </div>
         </div>
       </div>
-    
     </div>
   );
 }
