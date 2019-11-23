@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function art() {
+export default function art({ state: { products } }) {
   return (
     <div className="main-content">
       <div className="container">
@@ -29,42 +29,13 @@ export default function art() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                </tr>
-                <tr>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                </tr>
-                <tr>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                </tr>
-                <tr>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                </tr>
-                <tr>
-                  <td>Airi Satou</td>
-                  <td>Accountant</td>
-                </tr>
-                <tr>
-                  <td>Brielle Williamson</td>
-                  <td>Integration Specialist</td>
-                </tr>
-                <tr>
-                  <td>Herrod Chandler</td>
-                  <td>Sales Assistant</td>
-                </tr>
-                <tr>
-                  <td>Rhona Davidson</td>
-                  <td>Integration Specialist</td>
-                </tr>
-                <tr>
-                  <td>Colleen Hurst</td>
-                  <td>Javascript Developer</td>
-                </tr>
+                {products &&
+                  products.map(product => (
+                    <tr>
+                      <td>{product.productName}</td>
+                      <td>{product.productAWSLink}</td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

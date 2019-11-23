@@ -9,14 +9,16 @@ export default class Dashboard extends Component {
     password: "",
     reTypePassword: "",
     systemUsers: [],
-    customers: []
+    customers: [],
+    products: []
   };
 
   componentWillMount = () => {
     this.retrieveAllUsers();
     this.retrieveAllCustomers();
+    this.retrieveAllProducts();
   };
-
+  
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -63,21 +65,25 @@ export default class Dashboard extends Component {
 
   retrieveAllCustomers = () => {
     const url = `${baseURL}fresh/v1/customers`;
-    const token = `${localStorage.getItem("token")}`;
     fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-type": "application/json"
-      }
+      method: "GET"
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data, "some data from api");
         this.setState({ customers: data });
       });
   };
 
+  retrieveAllProducts = () => {
+    const url = `${baseURL}fresh/v1/products`;
+    fetch(url, {
+      method: "GET"
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ products: data });
+      });
+  };
   render() {
     return (
       <Fragment>
