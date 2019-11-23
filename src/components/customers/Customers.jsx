@@ -30,20 +30,21 @@ export default function customers({ state: { customers } }) {
                   <th>Phone Number</th>
                   <th>Outlet</th>
                   <th>Location</th>
+                  <th>Product</th>
                 </tr>
               </thead>
               <tbody>
-                  {customers &&
-                    customers.map(user => (
-                      <tr>
-                        <td>{user.receiptNumber}</td>
-                        <td>{user.firstName}</td>
-                        <td>{user.lastName}</td>
-                        <td>{user.phoneNumber}</td>
-                        <td>{user.outlet}</td>
-                        <td>{user.location}</td>
-                      </tr>
-                    ))}
+                {customers &&
+                  customers.map(user => (
+                    <tr>
+                      <td>{user.receiptNumber}</td>
+                      <td>{user.firstName}</td>
+                      <td>{user.lastName}</td>
+                      <td>{user.phoneNumber}</td>
+                      <td>{user.outlet}</td>
+                      <td>{user.location}</td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

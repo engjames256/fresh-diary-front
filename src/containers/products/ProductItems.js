@@ -8,7 +8,7 @@ export default class ProductItems extends Component {
     outlet: "",
     location: "",
     phoneNumber: "",
-    recieptNumber: "",
+    receiptNumber: "",
     customers: []
   };
   handleInputChange = event => {
@@ -26,7 +26,7 @@ export default class ProductItems extends Component {
       outlet,
       location,
       phoneNumber,
-      recieptNumber
+      receiptNumber
     } = this.state;
     const data = {
       firstName,
@@ -34,7 +34,7 @@ export default class ProductItems extends Component {
       outlet,
       location,
       phoneNumber,
-      recieptNumber
+      receiptNumber
     };
     fetch(url, {
       method: "POST",
@@ -52,7 +52,7 @@ export default class ProductItems extends Component {
           outlet: "",
           location: "",
           phoneNumber: "",
-          recieptNumber: ""
+          receiptNumber: ""
         });
       });
   };

@@ -2,7 +2,11 @@ import React from "react";
 import testImage from "../../assets/images/test-image.png";
 import QRCode from "../../assets/images/MyQRCode.png";
 
-export default function ProductsItems({handleInputChange, handleSubmit, state:{firstName, lastName, outlet, location, phoneNumber, recieptNumber}}) {
+export default function ProductsItems({
+  handleInputChange,
+  handleSubmit,
+  state: { firstName, lastName, outlet, location, phoneNumber, receiptNumber }
+}) {
   return (
     <div class="row row-sm">
       {/* Small Modal For QR Code */}
@@ -123,14 +127,17 @@ export default function ProductsItems({handleInputChange, handleSubmit, state:{f
                         type="text"
                         className="form-control form-control-lg"
                         placeholder="Reciept Number"
-                        name="recieptNumber"
-                        value={recieptNumber}
+                        name="receiptNumber"
+                        value={receiptNumber}
                         onChange={handleInputChange}
                       />
                     </div>
                   </div>
                 </div>
-                <button className="btn btn-primary btn-lg btn-block btn-uppercase mb-4" onClick={handleSubmit}>
+                <button
+                  className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
+                  onClick={handleSubmit}
+                >
                   Enter Draw
                 </button>
               </form>
