@@ -6,13 +6,18 @@ import Products from "./containers/products/ProductItems";
 import TopNav from "./containers/commons/TopNav";
 import Dashboard from "./containers/customers/Dashboard";
 import Modal from "./components/commons/Modal";
-
+import history from "./containers/configs/history";
 class App extends Component {
+  handleLogout = () => {
+    console.log("hdhdhddh");
+    localStorage.removeItem("token");
+    history.push("/login");
+  };
   render() {
     return (
       <div className="App">
         <Router>
-          <TopNav />
+          <TopNav handleLogout={this.handleLogout} />
           <Switch>
             <Route path="/login" exact component={Login} />
             <Route path="/" exact component={Products} />

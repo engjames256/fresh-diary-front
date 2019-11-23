@@ -10,10 +10,12 @@ export default function customers({ state: { customers } }) {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
-                <NavLink to="#">Dashboard</NavLink>
+                <NavLink to="#">Our Products</NavLink>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Customers
+                <NavLink to="/" className="text-primary">
+                  View Products
+                </NavLink>
               </li>
             </ol>
           </nav>
@@ -33,17 +35,17 @@ export default function customers({ state: { customers } }) {
                 </tr>
               </thead>
               <tbody>
-                  {customers &&
-                    customers.map(user => (
-                      <tr>
-                        <td>{user.receiptNumber}</td>
-                        <td>{user.firstName}</td>
-                        <td>{user.lastName}</td>
-                        <td>{user.phoneNumber}</td>
-                        <td>{user.outlet}</td>
-                        <td>{user.location}</td>
-                      </tr>
-                    ))}
+                {customers &&
+                  customers.map(user => (
+                    <tr>
+                      <td>{user.receiptNumber}</td>
+                      <td>{user.firstName}</td>
+                      <td>{user.lastName}</td>
+                      <td>{user.phoneNumber}</td>
+                      <td>{user.outlet}</td>
+                      <td>{user.location}</td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>

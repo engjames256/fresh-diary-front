@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/fresh-diary.png";
 
-export default function TopNav() {
+export default function TopNav({ handleLogout }) {
   return (
     <nav class="navbar">
       <div class="container-fluid">
@@ -47,58 +47,15 @@ export default function TopNav() {
               </NavLink>
             </li>
             <li class="nav-item dropdown">
-              <NavLink to="#" class="nav-link" data-toggle="dropdown">
-                <i class="fa fa-user-o"></i>
-              </NavLink>
-              <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
-                <div
-                  class="dropdown-menu-title text-center"
-                  data-backround-image="http://borderless.laborasyon.com/assets/media/image/image1.png"
-                >
-                  <figure class="avatar avatar-state-success avatar-sm m-b-10 bring-forward">
-                    <img
-                      src="http://borderless.laborasyon.com/assets/media/image/avatar.jpg"
-                      class="rounded-circle"
-                      alt=""
-                    />
-                  </figure>
-                  <h6 class="text-uppercase font-size-12 m-b-0">
-                    Rickie Richard
-                  </h6>
-                </div>
-                <div class="dropdown-menu-body">
-                  <div class="bg-light p-t-b-15 p-l-r-20">
-                    <h6 class="text-uppercase font-size-11">
-                      Profile Completion
-                    </h6>
-                    <div class="progress" style={{ height: "5px" }}>
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style={{ width: "25%" }}
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <NavLink to="#" class="list-group-item link-2">
-                      Profile
-                    </NavLink>
-                    <NavLink
-                      to="#"
-                      class="list-group-item link-2 sidebar-open"
-                      data-sidebar-target="#settings"
-                    >
-                      Settings
-                    </NavLink>
-                    <NavLink to="/login" class="list-group-item text-danger">
-                      Logout
-                    </NavLink>
-                  </ul>
-                </div>
-              </div>
+              {localStorage.getItem("token") ? (
+                <NavLink to="/login" class="nav-link">
+                  <span onClick={handleLogout}>Logout</span>
+                </NavLink>
+              ) : (
+                <NavLink to="/login" class="nav-link">
+                  <span>Login</span>
+                </NavLink>
+              )}
             </li>
             <li class="nav-item d-lg-none d-sm-block">
               <NavLink to="#" class="nav-link side-menu-open">

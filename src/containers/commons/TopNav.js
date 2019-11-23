@@ -7,11 +7,11 @@ class TopNav extends Component {
   render() {
     const { location } = this.props;
     if (isFramelessPage(location.pathname)) {
-      return <TopNavComponent />;
+      return <TopNavComponent handleLogout={this.props.handleLogout} />;
     }
     return (
       <Fragment>
-        <TopNavComponent />
+        <TopNavComponent handleLogout={this.props.handleLogout} />
       </Fragment>
     );
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import testImage from "../../assets/images/test-image.png";
 export default function art({
   handleImageChange,
   state: { imagePreviewUrl, products }
@@ -38,7 +37,7 @@ export default function art({
                     {imagePreviewUrl && (
                       <img
                         src={imagePreviewUrl}
-                        alt="Product Image"
+                        alt="Product"
                         id="item-image"
                       />
                     )}
