@@ -93,7 +93,7 @@ export default function TopNav() {
                     >
                       Settings
                     </NavLink>
-                    <NavLink to="/" class="list-group-item text-danger">
+                    <NavLink to="/login" class="list-group-item text-danger">
                       Logout
                     </NavLink>
                   </ul>

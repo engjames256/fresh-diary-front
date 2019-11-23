@@ -14,8 +14,8 @@ class App extends Component {
         <Router>
           <TopNav />
           <Switch>
-            <Route path="/" exact component={Login} />
-            <Route path="/products" exact component={Products} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/" exact component={Products} />
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/modal" exact component={Modal} />
           </Switch>

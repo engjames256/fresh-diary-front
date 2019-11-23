@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function customers() {
+export default function customers({ state: { customers } }) {
   return (
     <div className="main-content">
       <div className="container">
@@ -24,107 +24,27 @@ export default function customers() {
             <table id="example1" className="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th>Reciept No.</th>
-                  <th>Product Name</th>
-                  <th>Office</th>
+                  <th>Recipt Number</th>
                   <th>First Name</th>
                   <th>Last Name</th>
-                  <th>Output</th>
+                  <th>Phone Number</th>
+                  <th>Outlet</th>
                   <th>Location</th>
-                  <th>Contact</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Timothy Mooney</td>
-                  <td>Office Manager</td>
-                  <td>London</td>
-                  <td>37</td>
-                  <td>2008/12/11</td>
-                  <td>$136,200</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Jackson Bradshaw</td>
-                  <td>Director</td>
-                  <td>New York</td>
-                  <td>65</td>
-                  <td>2008/09/26</td>
-                  <td>$645,750</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Olivia Liang</td>
-                  <td>Support Engineer</td>
-                  <td>Singapore</td>
-                  <td>64</td>
-                  <td>2011/02/03</td>
-                  <td>$234,500</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Bruno Nash</td>
-                  <td>Software Engineer</td>
-                  <td>London</td>
-                  <td>38</td>
-                  <td>2011/05/03</td>
-                  <td>$163,500</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Sakura Yamamoto</td>
-                  <td>Support Engineer</td>
-                  <td>Tokyo</td>
-                  <td>37</td>
-                  <td>2009/08/19</td>
-                  <td>$139,575</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Thor Walton</td>
-                  <td>Developer</td>
-                  <td>New York</td>
-                  <td>61</td>
-                  <td>2013/08/11</td>
-                  <td>$98,540</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-                <tr>
-                  <td>Finn Camacho</td>
-                  <td>Support Engineer</td>
-                  <td>San Francisco</td>
-                  <td>47</td>
-                  <td>2009/07/07</td>
-                  <td>$87,500</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
-                </tr>
-
-                <tr>
-                  <td>Jonas Alexander</td>
-                  <td>Developer</td>
-                  <td>San Francisco</td>
-                  <td>30</td>
-                  <td>2010/07/14</td>
-                  <td>$86,500</td>
-                  <td>61</td>
-                  <td>Edinburgh</td>
+                  {customers &&
+                    customers.map(user => (
+                      <tr>
+                        <td>{user.recieptNumber}</td>
+                        <td>{user.firstName}</td>
+                        <td>{user.lastName}</td>
+                        <td>{user.phoneNumber}</td>
+                        <td>{user.outlet}</td>
+                        <td>{user.location}</td>
+                      </tr>
+                    ))}
                 </tr>
               </tbody>
             </table>

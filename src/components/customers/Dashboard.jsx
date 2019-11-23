@@ -5,18 +5,18 @@ import UsersComponent from "../../components/users/ViewUsers";
 
 export default function Dashboard({ handleInputChange, state, handleSubmit }) {
   return (
-    <div class="card main-dashboard">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-2 left-body">
+    <div className="card main-dashboard">
+      <div className="card-body">
+        <div className="row">
+          <div className="col-md-2 left-body">
             <div
-              class="nav flex-column nav-pills"
+              className="nav flex-column nav-pills"
               id="v-pills-tab"
               role="tablist"
               aria-orientation="vertical"
             >
               <a
-                class="nav-link active h5"
+                className="nav-link active h5"
                 id="v-pills-home-tab"
                 data-toggle="pill"
                 href="#v-pills-home"
@@ -27,7 +27,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 Customers
               </a>
               <a
-                class="nav-link h5"
+                className="nav-link h5"
                 id="v-pills-profile-tab"
                 data-toggle="pill"
                 href="#v-pills-profile"
@@ -38,7 +38,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 Products
               </a>
               <a
-                class="nav-link h5"
+                className="nav-link h5"
                 id="v-pills-messages-tab"
                 data-toggle="pill"
                 href="#v-pills-messages"
@@ -49,7 +49,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 Users
               </a>
               <a
-                class="nav-link h5"
+                className="nav-link h5"
                 id="v-pills-settings-tab"
                 data-toggle="pill"
                 href="#v-pills-settings"
@@ -61,18 +61,20 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
               </a>
             </div>
           </div>
-          <div class="col-md-10 main-body">
-            <div class="tab-content" id="v-pills-tabContent">
+          <div className="col-md-10 main-body">
+            <div className="tab-content" id="v-pills-tabContent">
               <div
-                class="tab-pane fade show active"
+                className="tab-pane fade show active"
                 id="v-pills-home"
                 role="tabpanel"
                 aria-labelledby="v-pills-home-tab"
               >
-                <Customers />
+                <Customers handleInputChange={handleInputChange}
+                  state={state}
+                  handleSubmit={handleSubmit}/>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="v-pills-profile"
                 role="tabpanel"
                 aria-labelledby="v-pills-profile-tab"
@@ -80,7 +82,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 <Arts />
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="v-pills-messages"
                 role="tabpanel"
                 aria-labelledby="v-pills-messages-tab"
@@ -92,7 +94,7 @@ export default function Dashboard({ handleInputChange, state, handleSubmit }) {
                 />
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="v-pills-settings"
                 role="tabpanel"
                 aria-labelledby="v-pills-settings-tab"

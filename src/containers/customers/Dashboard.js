@@ -8,11 +8,13 @@ export default class Dashboard extends Component {
     fullName: "",
     password: "",
     reTypePassword: "",
-    systemUsers: []
+    systemUsers: [],
+    customers: []
   };
 
   componentWillMount = () => {
     this.retrieveAllUsers();
+    this.retrieveAllCustomers();
   };
 
   handleInputChange = event => {
@@ -56,6 +58,23 @@ export default class Dashboard extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ systemUsers: data });
+      });
+  };
+
+  retrieveAllCustomers = () => {
+    const url = `${baseURL}fresh/v1/customers`;
+    const token = `${localStorage.getItem("token")}`;
+    fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data, "some data from api");
+        this.setState({ customers: data });
       });
   };
 
