@@ -121,13 +121,14 @@ export default function viewUsers({
                   className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
                   onClick={handleSubmit}
                 >
-                  {isLoading && (
+                  {isLoading ? (
                     <div>
                       <span className="spinner-border spinner-border-sm" />
-                      &nbsp; Creating User ...
+                      &nbsp; Creating User...
                     </div>
+                  ) : (
+                    <span>Create User</span>
                   )}
-                  Create User
                 </button>
               </form>
             </div>

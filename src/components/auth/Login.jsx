@@ -62,13 +62,14 @@ const Home = ({
                 className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
                 onClick={handleSubmit}
               >
-                {isLoading && (
+                {isLoading ? (
                   <div>
                     <span className="spinner-border spinner-border-sm" />
                     &nbsp; Validating...
                   </div>
+                ) : (
+                  <span>Sign In</span>
                 )}
-                Sign In
               </button>
             </form>
           </div>

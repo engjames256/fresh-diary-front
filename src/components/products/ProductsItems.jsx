@@ -1,5 +1,5 @@
 import React from "react";
-import QRCode from "../../assets/images/MyQRCode.png";
+import QRCode from "../../assets/images/blender-machine.jpg";
 import { NavLink } from "react-router-dom";
 
 export default function ProductsItems({ products }) {

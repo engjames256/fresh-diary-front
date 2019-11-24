@@ -172,13 +172,14 @@ export default function Draw({
                 }
                 onClick={handleSubmit}
               >
-                {isLoading && (
+                {isLoading ? (
                   <div>
                     <span className="spinner-border spinner-border-sm" />
                     &nbsp; Processing...
                   </div>
+                ) : (
+                  <span>Enter Draw</span>
                 )}
-                Enter Draw
               </button>
             </form>
           </div>

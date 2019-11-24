@@ -110,7 +110,7 @@ export default function art({
                       {isLoading ? (
                         <div>
                           <span className="spinner-border spinner-border-sm" />
-                          &nbsp; Saving Product ...
+                          &nbsp; Saving Product...
                         </div>
                       ) : (
                         <span>Save Product</span>
