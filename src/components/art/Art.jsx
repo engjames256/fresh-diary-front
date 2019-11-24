@@ -107,13 +107,14 @@ export default function art({
                       className="btn btn-primary btn-block btn-uppercase mb-4"
                       onClick={handleSubmitArt}
                     >
-                      {isLoading && (
+                      {isLoading ? (
                         <div>
                           <span className="spinner-border spinner-border-sm" />
                           &nbsp; Saving Product ...
                         </div>
+                      ) : (
+                        <span>Save Product</span>
                       )}
-                      Save Product
                     </button>
                   </div>
                 </div>

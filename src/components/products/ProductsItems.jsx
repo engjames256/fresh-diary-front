@@ -1,5 +1,4 @@
 import React from "react";
-import testImage from "../../assets/images/test-image.png";
 import QRCode from "../../assets/images/MyQRCode.png";
 import { NavLink } from "react-router-dom";
 
@@ -50,7 +49,7 @@ export default function ProductsItems({ products }) {
                   <div class="row">
                     <div class="col-10 offset-1">
                       <div>
-                        <img src={testImage} alt="test" id="item-image" />
+                        <img src={productAWSLink} alt="test" id="item-image" />
                       </div>
                     </div>
                   </div>
