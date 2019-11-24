@@ -2,7 +2,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 export default function art({
   handleImageChange,
-  state: { imagePreviewUrl, products }
+  state: {
+    imagePreviewUrl,
+    products,
+    success,
+    errors,
+    isLoading,
+    productName,
+    productDescription
+  },
+  handleSubmitArt,
+  handleInputChange
 }) {
   return (
     <div className="main-content">
@@ -44,26 +54,27 @@ export default function art({
                   </div>
                 </div>
               </div>
-              <hr />
+
               <form>
                 <div className="row">
                   <div className="col-md-6 form-group mb-4">
                     <input
                       type="text"
-                      className="form-control form-control-lg"
+                      className={
+                        errors.productName
+                          ? "form-control form-control-lg error"
+                          : "form-control form-control-lg"
+                      }
                       autofocus
                       placeholder="Product Name"
+                      name="productName"
+                      value={productName}
+                      onChange={handleInputChange}
                     />
+                    {errors.productName && (
+                      <span className="text-danger">{errors.productName}</span>
+                    )}
                   </div>
-                  <div className="col-md-6 form-group mb-4">
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="Description"
-                    />
-                  </div>
-                </div>
-                <div className="row">
                   <div className="col-md-6">
                     <div className="form-group mb-4">
                       <input
@@ -73,8 +84,35 @@ export default function art({
                       />
                     </div>
                   </div>
-                  <div className="col-md-6">
-                    <button className="btn btn-primary btn-block btn-uppercase mb-4">
+
+                  <div className="col-md-12 form-group mb-4">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      placeholder="Description"
+                      name="productDescription"
+                      value={productDescription}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-12">
+                    {success && (
+                      <span className="text-success h4 text-center">
+                        Product Successfully Saved
+                      </span>
+                    )}
+                    <button
+                      className="btn btn-primary btn-block btn-uppercase mb-4"
+                      onClick={handleSubmitArt}
+                    >
+                      {isLoading && (
+                        <div>
+                          <span className="spinner-border spinner-border-sm" />
+                          &nbsp; Saving Product ...
+                        </div>
+                      )}
                       Save Product
                     </button>
                   </div>
@@ -128,7 +166,7 @@ export default function art({
                   products.map(product => (
                     <tr>
                       <td>{product.productName}</td>
-                      <td>{product.productAWSLink}</td>
+                      <td>{product.productDescription}</td>
                     </tr>
                   ))}
               </tbody>

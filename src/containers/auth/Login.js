@@ -5,7 +5,10 @@ import history from "../configs/history";
 class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    errors: {},
+    isLoading: false,
+    failed: false
   };
 
   handleInputChange = event => {
@@ -20,20 +23,29 @@ class Login extends Component {
     const url = `${baseURL}authenticate`;
     const { username, password } = this.state;
     const data = { username, password };
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-          history.push("/dashboard");
-        }
-      });
+    if (!username) {
+      const error = { username: "Don't forget to type your username" };
+      this.setState({ errors: error });
+    } else {
+      this.setState({ isLoading: false, errors: {} });
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.token) {
+            this.setState({ isLoading: false });
+            localStorage.setItem("token", data.token);
+            history.push("/dashboard");
+          } else {
+            this.setState({ failed: true });
+          }
+        });
+    }
   };
   render() {
     return (

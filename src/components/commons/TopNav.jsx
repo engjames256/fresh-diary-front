@@ -13,30 +13,32 @@ export default function TopNav({ handleLogout }) {
         </div>
 
         <div class="header-body">
-          <form class="search">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="input-group search">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search ..."
-                    aria-label="Recipient's username"
-                    aria-describedby="button-addon2"
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="btn btn-light"
-                      type="button"
-                      id="button-addon2"
-                    >
-                      <i class="fa fa-search"></i>
-                    </button>
+          {localStorage.getItem("token") && (
+            <form class="search">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="input-group search">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search ..."
+                      aria-label="Recipient's username"
+                      aria-describedby="button-addon2"
+                    />
+                    <div class="input-group-append">
+                      <button
+                        class="btn btn-light"
+                        type="button"
+                        id="button-addon2"
+                      >
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
+          )}
           <ul class="navbar-nav">
             <li class="nav-item">
               <NavLink
@@ -47,13 +49,9 @@ export default function TopNav({ handleLogout }) {
               </NavLink>
             </li>
             <li class="nav-item dropdown">
-              {localStorage.getItem("token") ? (
+              {localStorage.getItem("token") && (
                 <NavLink to="/login" class="nav-link">
                   <span onClick={handleLogout}>Logout</span>
-                </NavLink>
-              ) : (
-                <NavLink to="/login" class="nav-link">
-                  <span>Login</span>
                 </NavLink>
               )}
             </li>

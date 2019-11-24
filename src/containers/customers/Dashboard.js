@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from "react";
 import DashboardComponent from "../../components/customers/Dashboard";
 import { baseURL } from "../configs/utils";
-
-export default class Dashboard extends Component {
+import { withRouter } from "react-router-dom";
+import history from "../configs/history";
+// import { storage } from "../configs/index";
+class Dashboard extends Component {
   state = {
     username: "",
     fullName: "",
@@ -13,7 +15,13 @@ export default class Dashboard extends Component {
     products: [],
     file: "",
     imagePreviewUrl: "",
-    productName: ""
+    url: "",
+    progress: 0,
+    productName: "",
+    productDescription: "",
+    errors: {},
+    isLoading: false,
+    success: false
   };
 
   componentWillMount = () => {
@@ -25,34 +33,49 @@ export default class Dashboard extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+    this.setState({ success: false });
   };
 
   handleSubmit = event => {
     event.preventDefault();
     const url = `${baseURL}user`;
-    const { username, password, fullName } = this.state;
+    const { username, password, fullName, reTypePassword } = this.state;
     const data = {
       username: username,
       password: password,
       fullname: fullName
     };
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          username: "",
-          password: "",
-          fullName: "",
-          reTypePassword: ""
+    if (!username) {
+      const error = { username: "Username is required" };
+      this.setState({ errors: error });
+    } else if (!fullName) {
+      const error = { fullName: "Full name is required" };
+      this.setState({ errors: error });
+    } else if (password !== reTypePassword) {
+      const error = { reType: "Password mismatch" };
+      this.setState({ errors: error });
+    } else {
+      this.setState({ errors: {}, isLoading: true });
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            username: "",
+            password: "",
+            fullName: "",
+            reTypePassword: "",
+            isLoading: false,
+            success: true
+          });
+          this.retrieveAllUsers();
         });
-        this.retrieveAllUsers();
-      });
+    }
   };
 
   handleImageChange = event => {
@@ -68,7 +91,6 @@ export default class Dashboard extends Component {
     };
 
     reader.readAsDataURL(file);
-    console.log(this.state);
   };
 
   retrieveAllUsers = () => {
@@ -105,30 +127,72 @@ export default class Dashboard extends Component {
   };
   handleSubmitArt = event => {
     event.preventDefault();
+
+    // Upload image to firebase
+    // const { file } = this.state;
+    // const uploadTask = storage.ref(`images/${file.name}`).put(file);
+    // uploadTask.on(
+    //   "state_changed",
+    //   snapshot => {
+    //     // progress function ...
+    //     const progress = Math.round(
+    //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+    //     );
+    //     this.setState({ progress });
+    //   },
+    //   error => {
+    //     // Error function ...
+    //     console.log(error);
+    //   },
+    //   () => {
+    //     // complete function ...
+    //     storage
+    //       .ref("images")
+    //       .child(file.name)
+    //       .getDownloadURL()
+    //       .then(url => {
+    //         this.setState({ url });
+    //       });
+    //   }
+    // );
+
     const url = `${baseURL}fresh/v1/add/products`;
-    const { productName, imagePreviewUrl } = this.state;
+    const { productName, productDescription } = this.state;
     const data = {
       productName,
-      productAWSLink: imagePreviewUrl
+      productDescription
     };
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          productName: "",
-          imagePreviewUrl: ""
+    if (!productName) {
+      const error = { productName: "Product name is required" };
+      this.setState({ errors: error });
+    } else {
+      this.setState({ errors: {}, isLoading: true });
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(data => {
+          this.setState({
+            productName: "",
+            imagePreviewUrl: "",
+            isLoading: false,
+            success: true
+          });
+          this.retrieveAllProducts();
         });
-      });
+    }
   };
 
   render() {
+    const { location } = this.props;
+    if (location.pathname && !localStorage.getItem("token")) {
+      return history.push("/login");
+    }
     return (
       <Fragment>
         <DashboardComponent
@@ -136,8 +200,10 @@ export default class Dashboard extends Component {
           state={this.state}
           handleSubmit={this.handleSubmit}
           handleImageChange={this.handleImageChange}
+          handleSubmitArt={this.handleSubmitArt}
         />
       </Fragment>
     );
   }
 }
+export default withRouter(Dashboard);

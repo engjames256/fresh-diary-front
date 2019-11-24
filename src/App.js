@@ -7,9 +7,9 @@ import TopNav from "./containers/commons/TopNav";
 import Dashboard from "./containers/customers/Dashboard";
 import Modal from "./components/commons/Modal";
 import history from "./containers/configs/history";
+import Draw from "./containers/customers/Draw";
 class App extends Component {
   handleLogout = () => {
-    console.log("hdhdhddh");
     localStorage.removeItem("token");
     history.push("/login");
   };
@@ -22,6 +22,7 @@ class App extends Component {
             <Route path="/login" exact component={Login} />
             <Route path="/" exact component={Products} />
             <Route path="/dashboard" exact component={Dashboard} />
+            <Route path="/draw/:id" exact component={Draw} />
             <Route path="/modal" exact component={Modal} />
           </Switch>
         </Router>

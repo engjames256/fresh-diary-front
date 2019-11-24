@@ -3,7 +3,7 @@ import React from "react";
 const Home = ({
   handleSubmit,
   handleInputChange,
-  state: { username, password }
+  state: { username, password, isLoading, errors, failed }
 }) => {
   return (
     <div className="bg-white h-100-vh p-t-0">
@@ -26,14 +26,21 @@ const Home = ({
               <div className="form-group mb-4">
                 <input
                   type="text"
-                  className="form-control form-control-lg"
+                  className={
+                    errors.username
+                      ? "form-control form-control-lg error"
+                      : "form-control form-control-lg"
+                  }
                   id="exampleInputEmail1"
                   autofocus
-                  placeholder="Email or username"
+                  placeholder="Username"
                   name="username"
                   onChange={handleInputChange}
                   value={username}
                 />
+                {errors.username && (
+                  <span className="text-danger">{errors.username}</span>
+                )}
               </div>
               <div className="form-group mb-4">
                 <input
@@ -46,24 +53,23 @@ const Home = ({
                   value={password}
                 />
               </div>
+              {failed && (
+                <span className="text-danger h5 text-center">
+                  Invalid Credentials
+                </span>
+              )}
               <button
                 className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
                 onClick={handleSubmit}
               >
+                {isLoading && (
+                  <div>
+                    <span className="spinner-border spinner-border-sm" />
+                    &nbsp; Validating...
+                  </div>
+                )}
                 Sign In
               </button>
-              <div className="d-flex justify-content-between align-items-center mb-4">
-                <div className="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customCheck"
-                  />
-                  <label className="custom-control-label" for="customCheck">
-                    Keep me signed in
-                  </label>
-                </div>
-              </div>
             </form>
           </div>
         </div>

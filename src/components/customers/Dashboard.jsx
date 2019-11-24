@@ -7,7 +7,8 @@ export default function Dashboard({
   handleInputChange,
   state,
   handleSubmit,
-  handleImageChange
+  handleImageChange,
+  handleSubmitArt
 }) {
   return (
     <div className="card main-dashboard">
@@ -51,18 +52,7 @@ export default function Dashboard({
                 aria-controls="v-pills-messages"
                 aria-selected="false"
               >
-                Users
-              </a>
-              <a
-                className="nav-link h5"
-                id="v-pills-settings-tab"
-                data-toggle="pill"
-                href="#v-pills-settings"
-                role="tab"
-                aria-controls="v-pills-settings"
-                aria-selected="false"
-              >
-                Settings
+                System Users
               </a>
             </div>
           </div>
@@ -86,7 +76,12 @@ export default function Dashboard({
                 role="tabpanel"
                 aria-labelledby="v-pills-profile-tab"
               >
-                <Arts handleImageChange={handleImageChange} state={state} />
+                <Arts
+                  handleImageChange={handleImageChange}
+                  state={state}
+                  handleSubmitArt={handleSubmitArt}
+                  handleInputChange={handleInputChange}
+                />
               </div>
               <div
                 className="tab-pane fade"
@@ -99,14 +94,6 @@ export default function Dashboard({
                   state={state}
                   handleSubmit={handleSubmit}
                 />
-              </div>
-              <div
-                className="tab-pane fade"
-                id="v-pills-settings"
-                role="tabpanel"
-                aria-labelledby="v-pills-settings-tab"
-              >
-                One
               </div>
             </div>
           </div>

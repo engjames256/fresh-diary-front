@@ -32,6 +32,7 @@ export default function customers({ state: { customers } }) {
                   <th>Phone Number</th>
                   <th>Outlet</th>
                   <th>Location</th>
+                  <th>Product Name</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,6 +45,7 @@ export default function customers({ state: { customers } }) {
                       <td>{user.phoneNumber}</td>
                       <td>{user.outlet}</td>
                       <td>{user.location}</td>
+                      <td>{user.product.productName}</td>
                     </tr>
                   ))}
               </tbody>

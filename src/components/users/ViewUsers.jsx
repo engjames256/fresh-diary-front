@@ -2,7 +2,16 @@ import React from "react";
 
 export default function viewUsers({
   handleInputChange,
-  state: { username, fullName, password, reTypePassword, systemUsers },
+  state: {
+    username,
+    fullName,
+    password,
+    reTypePassword,
+    systemUsers,
+    errors,
+    isLoading,
+    success
+  },
   handleSubmit
 }) {
   return (
@@ -10,7 +19,7 @@ export default function viewUsers({
       {/* Add Users Modal */}
       <div
         class="modal fade"
-        id="exampleModal"
+        id="exampleModal1"
         tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
@@ -37,23 +46,37 @@ export default function viewUsers({
                   <div className="col-md-6 form-group mb-4">
                     <input
                       type="text"
-                      className="form-control form-control-lg"
+                      className={
+                        errors.username
+                          ? "form-control form-control-lg error"
+                          : "form-control form-control-lg"
+                      }
                       autofocus
                       placeholder="Username"
                       name="username"
                       value={username}
                       onChange={handleInputChange}
                     />
+                    {errors.username && (
+                      <span className="text-danger">{errors.username}</span>
+                    )}
                   </div>
                   <div className="col-md-6 form-group mb-4">
                     <input
                       type="text"
-                      className="form-control form-control-lg"
+                      className={
+                        errors.fullName
+                          ? "form-control form-control-lg error"
+                          : "form-control form-control-lg"
+                      }
                       placeholder="Full Name"
                       name="fullName"
                       value={fullName}
                       onChange={handleInputChange}
                     />
+                    {errors.fullName && (
+                      <span className="text-danger">{errors.fullName}</span>
+                    )}
                   </div>
                 </div>
                 <div className="row">
@@ -73,19 +96,37 @@ export default function viewUsers({
                     <div className="form-group mb-4">
                       <input
                         type="password"
-                        className="form-control form-control-lg"
+                        className={
+                          errors.reType
+                            ? "form-control form-control-lg error"
+                            : "form-control form-control-lg"
+                        }
                         placeholder="Retype Password"
                         name="reTypePassword"
                         value={reTypePassword}
                         onChange={handleInputChange}
                       />
+                      {errors.reType && (
+                        <span className="text-danger">{errors.reType}</span>
+                      )}
                     </div>
                   </div>
                 </div>
+                {success && (
+                  <span className="text-success h4 text-center">
+                    User Successfully Created
+                  </span>
+                )}
                 <button
                   className="btn btn-primary btn-lg btn-block btn-uppercase mb-4"
                   onClick={handleSubmit}
                 >
+                  {isLoading && (
+                    <div>
+                      <span className="spinner-border spinner-border-sm" />
+                      &nbsp; Creating User ...
+                    </div>
+                  )}
                   Create User
                 </button>
               </form>
@@ -111,7 +152,7 @@ export default function viewUsers({
                     type="button"
                     class="btn btn-primary float-right"
                     data-toggle="modal"
-                    data-target="#exampleModal"
+                    data-target="#exampleModal1"
                     data-whatever="@fat"
                   >
                     Add User
