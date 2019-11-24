@@ -27,7 +27,7 @@ class Login extends Component {
       const error = { username: "Don't forget to type your username" };
       this.setState({ errors: error });
     } else {
-      this.setState({ isLoading: false, errors: {} });
+      this.setState({ isLoading: true, errors: {} });
       fetch(url, {
         method: "POST",
         headers: {
