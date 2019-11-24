@@ -209,6 +209,21 @@ class Dashboard extends Component {
     }
   };
 
+  handleDelete = id => {
+    const urlAPI = `${baseURL}fresh/v1/delete/products/${id}`;
+    fetch(urlAPI, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          isLoading: false,
+          success: true
+        });
+        this.retrieveAllProducts();
+      });
+  };
+
   render() {
     const { location } = this.props;
     if (location.pathname && !localStorage.getItem("token")) {
@@ -222,6 +237,7 @@ class Dashboard extends Component {
           handleSubmit={this.handleSubmit}
           handleImageChange={this.handleImageChange}
           handleSubmitArt={this.handleSubmitArt}
+          handleDelete={this.handleDelete}
         />
       </Fragment>
     );

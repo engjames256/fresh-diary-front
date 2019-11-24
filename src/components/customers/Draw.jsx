@@ -1,5 +1,4 @@
 import React from "react";
-import testImage from "../../assets/images/test-image.png";
 
 export default function Draw({
   handleInputChange,
@@ -14,7 +13,8 @@ export default function Draw({
     errors,
     isLoading,
     success,
-    deactivateButton
+    deactivateButton,
+    product
   }
 }) {
   return (
@@ -23,7 +23,7 @@ export default function Draw({
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              Fill in your details to enter the draw for
+              Fill in your details to enter the draw for {product.productName}
             </h5>
             <button
               type="button"
@@ -38,7 +38,11 @@ export default function Draw({
             <div class="row">
               <div class="col-10 offset-1">
                 <div>
-                  <img src={testImage} alt="test" id="item-image" />
+                  <img
+                    src={product.productAWSLink}
+                    alt="test"
+                    id="item-image"
+                  />
                 </div>
               </div>
             </div>

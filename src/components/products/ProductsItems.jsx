@@ -20,7 +20,7 @@ export default function ProductsItems({ products }) {
                 <div class="card-body">
                   <div class="row">
                     <div class="col-10 offset-1">
-                      <div>
+                      <div className="product-image">
                         <img src={productAWSLink} alt="test" id="item-image" />
                       </div>
                     </div>
@@ -37,47 +37,9 @@ export default function ProductsItems({ products }) {
                       </NavLink>
                     </div>
                     <div class="col-6 mt-1">
-                      <button
-                        type="button"
-                        class="btn btn-dark"
-                        data-toggle="modal"
-                        data-target=".bd-example-modal-sm"
-                      >
+                      <NavLink className="btn btn-secondary" to={`/code/${id}`}>
                         Scan QR Code
-                      </button>
-                      {/* Small Modal For QR Code */}
-                      <div
-                        class="modal fade bd-example-modal-sm"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="mySmallModalLabel"
-                        aria-hidden="true"
-                      >
-                        <div class="modal-dialog modal-sm">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h6 class="modal-title">
-                                Scan the QR Code Below
-                              </h6>
-                              <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                              >
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <img
-                                src={productQRLink}
-                                alt="QRCode"
-                                id="item-image"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </NavLink>
                     </div>
                   </div>
                 </div>

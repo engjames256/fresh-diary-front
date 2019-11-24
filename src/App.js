@@ -8,6 +8,7 @@ import Dashboard from "./containers/customers/Dashboard";
 import Modal from "./components/commons/Modal";
 import history from "./containers/configs/history";
 import Draw from "./containers/customers/Draw";
+import QRCode from "./containers/products/QRCode";
 class App extends Component {
   handleLogout = () => {
     localStorage.removeItem("token");
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/" exact component={Products} />
             <Route path="/dashboard" exact component={Dashboard} />
             <Route path="/draw/:id" exact component={Draw} />
+            <Route path="/code/:id" exact component={QRCode} />
             <Route path="/modal" exact component={Modal} />
           </Switch>
         </Router>

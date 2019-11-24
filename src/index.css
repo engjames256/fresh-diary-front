@@ -38,3 +38,19 @@ nav.navbar .header-logo a img {
 .error {
   border: 1px solid red;
 }
+
+.w-100.row {
+  padding-top: 10px !important;
+  border: 0 !important;
+  border-width: 0px;
+  margin-left: 0px !important;
+}
+
+.action-icons {
+  height: 25px;
+  width: 35px;
+}
+.edit-button,
+.delete-button {
+  cursor: pointer;
+}

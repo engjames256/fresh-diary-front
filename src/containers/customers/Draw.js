@@ -13,8 +13,16 @@ export default class Draw extends Component {
     errors: {},
     isLoading: false,
     success: false,
-    deactivateButton: false
+    deactivateButton: false,
+    product: {}
   };
+
+  componentWillMount() {
+    const {
+      params: { id }
+    } = this.props.match;
+    this.retrieveProduct(id);
+  }
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -93,7 +101,19 @@ export default class Draw extends Component {
     }
   };
 
+  retrieveProduct = id => {
+    const url = `${baseURL}fresh/v1/products/${id}`;
+    fetch(url, {
+      method: "GET"
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ product: data });
+      });
+  };
+
   render() {
+    console.log(this.props);
     return (
       <DrawComponent
         handleInputChange={this.handleInputChange}

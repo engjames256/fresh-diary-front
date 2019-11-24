@@ -9,7 +9,8 @@ export default function art({
     errors,
     isLoading,
     productName,
-    productDescription
+    productDescription,
+    handleDelete
   },
   handleSubmitArt,
   handleInputChange
@@ -158,16 +159,37 @@ export default function art({
             <table id="example1" className="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th>Art Name</th>
-                  <th>Note</th>
+                  <th className="w-30">Art Name</th>
+                  <th className="w-50">Note</th>
+                  <th className="w-100 row text-center">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4">Actions</div>
+                    <div className="col-md-4"></div>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {products &&
                   products.map(product => (
-                    <tr>
+                    <tr key={product.id}>
                       <td>{product.productName}</td>
                       <td>{product.productDescription}</td>
+                      <td>
+                        <div className="col-md-12 edit-button">
+                          &nbsp;&nbsp;
+                          <button className="btn btn-lg btn-outline-secondary">
+                            Spin Winner
+                          </button>
+                          &nbsp;&nbsp;
+                          <button className="btn btn-lg btn-outline-primary">
+                            Edit
+                          </button>
+                          &nbsp;&nbsp;
+                          <button className="btn btn-lg btn-outline-danger">
+                            Delete
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   ))}
               </tbody>
