@@ -1,5 +1,5 @@
 export const isFramelessPage = pathname => {
-  return [`/`, `/login`, `/register`, `/forgotpassword`].includes(pathname);
+  return [`/`, `/login`, `/register`].includes(pathname);
 };
 
 export const baseURL = "https://fresh-diary-back.herokuapp.com/";
