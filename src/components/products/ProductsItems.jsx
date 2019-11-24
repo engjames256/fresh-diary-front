@@ -1,37 +1,9 @@
 import React from "react";
-import QRCode from "../../assets/images/blender-machine.jpg";
 import { NavLink } from "react-router-dom";
 
 export default function ProductsItems({ products }) {
   return (
     <div class="row row-sm">
-      {/* Small Modal For QR Code */}
-      <div
-        class="modal fade bd-example-modal-sm"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="mySmallModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 class="modal-title">Scan the QR Code Below</h6>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <img src={QRCode} alt="QRCode" id="item-image" />
-            </div>
-          </div>
-        </div>
-      </div>
       {products &&
         products.length &&
         products.map(
@@ -73,6 +45,39 @@ export default function ProductsItems({ products }) {
                       >
                         Scan QR Code
                       </button>
+                      {/* Small Modal For QR Code */}
+                      <div
+                        class="modal fade bd-example-modal-sm"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="mySmallModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-sm">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h6 class="modal-title">
+                                Scan the QR Code Below
+                              </h6>
+                              <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <img
+                                src={productQRLink}
+                                alt="QRCode"
+                                id="item-image"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
