@@ -42,7 +42,7 @@ class Login extends Component {
             localStorage.setItem("token", data.token);
             history.push("/dashboard");
           } else {
-            this.setState({ failed: true });
+            this.setState({ failed: true, isLoading: false });
           }
         });
     }
