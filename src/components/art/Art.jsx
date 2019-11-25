@@ -10,10 +10,11 @@ export default function art({
     isLoading,
     productName,
     productDescription,
-    handleDelete
+    failureMessage
   },
   handleSubmitArt,
-  handleInputChange
+  handleInputChange,
+  handleDelete
 }) {
   return (
     <div className="main-content">
@@ -104,6 +105,11 @@ export default function art({
                         Product Successfully Saved
                       </span>
                     )}
+                    {failureMessage !== "" && (
+                      <span className="text-danger h4 text-center">
+                        {failureMessage}
+                      </span>
+                    )}
                     <button
                       className="btn btn-primary btn-block btn-uppercase mb-4"
                       onClick={handleSubmitArt}
@@ -185,7 +191,10 @@ export default function art({
                             Edit
                           </button>
                           &nbsp;&nbsp;
-                          <button className="btn btn-lg btn-outline-danger">
+                          <button
+                            className="btn btn-lg btn-outline-danger"
+                            onClick={() => handleDelete(product.id)}
+                          >
                             Delete
                           </button>
                         </div>

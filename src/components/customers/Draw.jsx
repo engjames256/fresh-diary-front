@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Draw({
   handleInputChange,
@@ -25,14 +26,15 @@ export default function Draw({
             <h5 class="modal-title" id="exampleModalLabel">
               Fill in your details to enter the draw for {product.productName}
             </h5>
-            <button
+            <NavLink
               type="button"
               class="close"
               data-dismiss="modal"
               aria-label="Close"
+              to="/"
             >
               <span aria-hidden="true">&times;</span>
-            </button>
+            </NavLink>
           </div>
           <div class="modal-body">
             <div class="row">

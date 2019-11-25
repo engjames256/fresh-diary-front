@@ -4,16 +4,9 @@ import { NavLink } from "react-router-dom";
 export default function ProductsItems({ products }) {
   return (
     <div class="row row-sm">
-      {products &&
-        products.length &&
+      {products && products.length ? (
         products.map(
-          ({
-            id,
-            productName,
-            productDescription,
-            productAWSLink,
-            productQRLink
-          }) => (
+          ({ id, productName, productDescription, productAWSLink }) => (
             <div class="col-md-3" key={id}>
               <div class="card">
                 <div class="card-header">{productName}</div>
@@ -46,7 +39,12 @@ export default function ProductsItems({ products }) {
               </div>
             </div>
           )
-        )}
+        )
+      ) : (
+        <span className="text-primary h4">
+          No Products Available At This Time
+        </span>
+      )}
     </div>
   );
 }

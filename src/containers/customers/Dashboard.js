@@ -36,7 +36,8 @@ class Dashboard extends Component {
     productDescription: "",
     errors: {},
     isLoading: false,
-    success: false
+    success: false,
+    failureMessage: ""
   };
 
   componentWillMount = () => {
@@ -195,13 +196,22 @@ class Dashboard extends Component {
               })
                 .then(response => response.json())
                 .then(data => {
-                  self.setState({
-                    productName: "",
-                    imagePreviewUrl: "",
-                    isLoading: false,
-                    success: true
-                  });
-                  self.retrieveAllProducts();
+                  if (data) {
+                    self.setState({
+                      productName: "",
+                      imagePreviewUrl: "",
+                      isLoading: false,
+                      success: true
+                    });
+                    self.retrieveAllProducts();
+                  } else {
+                    this.setState({
+                      isLoading: false,
+                      success: false,
+                      failureMessage: "Request failed"
+                    });
+                    self.retrieveAllProducts();
+                  }
                 });
             });
         }
