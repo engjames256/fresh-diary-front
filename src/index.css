@@ -54,3 +54,15 @@ nav.navbar .header-logo a img {
 .delete-button {
   cursor: pointer;
 }
+.modal-confirmation {
+  opacity: 0.5;
+}
+.custom-button-confirm {
+  height: 40px !important;
+  border: 1px solid #ea4141 !important;
+  vertical-align: middle !important;
+  color: #ea4141 !important;
+}
+.custom-button-confirm-edit {
+  height: 40px !important;
+}

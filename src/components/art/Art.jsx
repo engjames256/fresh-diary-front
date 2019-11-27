@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import ConfirmationModal from "../commons/ConfirmationModal";
+
 export default function art({
   handleImageChange,
   state: {
@@ -14,7 +16,8 @@ export default function art({
   },
   handleSubmitArt,
   handleInputChange,
-  handleDelete
+  handleDelete,
+  deleteArt
 }) {
   return (
     <div className="main-content">
@@ -183,20 +186,17 @@ export default function art({
                       <td>
                         <div className="col-md-12 edit-button">
                           &nbsp;&nbsp;
-                          <button className="btn btn-lg btn-outline-secondary">
+                          <button className="btn btn-lg btn-outline-secondary custom-button-confirm-edit">
                             Spin Winner
                           </button>
                           &nbsp;&nbsp;
-                          <button className="btn btn-lg btn-outline-primary">
+                          <button className="btn btn-lg btn-outline-primary custom-button-confirm-edit">
                             Edit
                           </button>
-                          &nbsp;&nbsp;
-                          <button
-                            className="btn btn-lg btn-outline-danger"
-                            onClick={() => handleDelete(product.id)}
-                          >
-                            Delete
-                          </button>
+                          &nbsp;
+                          <ConfirmationModal
+                            deleteArt={() => deleteArt(product.id)}
+                          />
                         </div>
                       </td>
                     </tr>

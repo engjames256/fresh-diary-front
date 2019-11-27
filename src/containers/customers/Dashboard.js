@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import history from "../configs/history";
 import firebase from "firebase/app";
 import "firebase/storage";
+import { Modal } from "antd";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC65dPZASXiPJarWpU24mE0BH6QwurXQEY",
@@ -20,25 +21,29 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 class Dashboard extends Component {
-  state = {
-    username: "",
-    fullName: "",
-    password: "",
-    reTypePassword: "",
-    systemUsers: [],
-    customers: [],
-    products: [],
-    file: "",
-    imagePreviewUrl: "",
-    url: "",
-    progress: 0,
-    productName: "",
-    productDescription: "",
-    errors: {},
-    isLoading: false,
-    success: false,
-    failureMessage: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      fullName: "",
+      password: "",
+      reTypePassword: "",
+      systemUsers: [],
+      customers: [],
+      products: [],
+      file: "",
+      imagePreviewUrl: "",
+      url: "",
+      progress: 0,
+      productName: "",
+      productDescription: "",
+      errors: {},
+      isLoading: false,
+      success: false,
+      failureMessage: ""
+    };
+    this.deleteArt = this.deleteArt.bind(this);
+  }
 
   componentWillMount = () => {
     this.retrieveAllUsers();
@@ -50,6 +55,27 @@ class Dashboard extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
     this.setState({ success: false });
+  };
+
+  handleDelete = id => {};
+
+  self = this;
+  deleteArt = id => {
+    const { confirm } = Modal;
+    confirm({
+      title: "Do you want to delete this product?",
+      content: "When you delete the product, it is not recoverable",
+      onOk() {
+        const urlAPI = `${baseURL}fresh/v1/delete/products/${id}`;
+        fetch(urlAPI, {
+          method: "DELETE"
+        })
+          .then(response => console.log(response))
+          .then(data => {
+          });
+      },
+      onCancel() {}
+    });
   };
 
   handleSubmit = event => {
@@ -219,21 +245,6 @@ class Dashboard extends Component {
     }
   };
 
-  handleDelete = id => {
-    const urlAPI = `${baseURL}fresh/v1/delete/products/${id}`;
-    fetch(urlAPI, {
-      method: "DELETE"
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          isLoading: false,
-          success: true
-        });
-        this.retrieveAllProducts();
-      });
-  };
-
   render() {
     const { location } = this.props;
     if (location.pathname && !localStorage.getItem("token")) {
@@ -248,6 +259,7 @@ class Dashboard extends Component {
           handleImageChange={this.handleImageChange}
           handleSubmitArt={this.handleSubmitArt}
           handleDelete={this.handleDelete}
+          deleteArt={this.deleteArt}
         />
       </Fragment>
     );
