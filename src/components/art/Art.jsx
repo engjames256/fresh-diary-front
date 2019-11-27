@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ConfirmationModal from "../commons/ConfirmationModal";
-
+import EditProduct from "../../containers/art/EditModal";
 export default function art({
   handleImageChange,
   state: {
@@ -185,11 +185,9 @@ export default function art({
                       <td>{product.productDescription}</td>
                       <td>
                         <div className="col-md-12 edit-button">
-                          &nbsp;&nbsp;
-                          <button className="btn btn-lg btn-outline-secondary custom-button-confirm-edit">
-                            Spin Winner
-                          </button>
-                          &nbsp;&nbsp;
+                          &nbsp;
+                          <EditProduct />
+                          &nbsp;
                           <button className="btn btn-lg btn-outline-primary custom-button-confirm-edit">
                             Edit
                           </button>
