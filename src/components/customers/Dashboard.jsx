@@ -10,7 +10,8 @@ export default function Dashboard({
   handleImageChange,
   handleSubmitArt,
   handleDelete,
-  deleteArt
+  deleteArt,
+  retrievWinner
 }) {
   return (
     <div className="card main-dashboard">
@@ -85,6 +86,7 @@ export default function Dashboard({
                   handleInputChange={handleInputChange}
                   handleDelete={handleDelete}
                   deleteArt={deleteArt}
+                  retrievWinner={retrievWinner}
                 />
               </div>
               <div

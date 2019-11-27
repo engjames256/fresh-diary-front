@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ConfirmationModal from "../commons/ConfirmationModal";
-import EditProduct from "../../containers/art/EditModal";
+import SpinnWinner from "../../containers/art/EditModal";
 export default function art({
   handleImageChange,
   state: {
@@ -12,12 +12,13 @@ export default function art({
     isLoading,
     productName,
     productDescription,
-    failureMessage
+    failureMessage,
+    winner
   },
   handleSubmitArt,
   handleInputChange,
-  handleDelete,
-  deleteArt
+  deleteArt,
+  retrievWinner
 }) {
   return (
     <div className="main-content">
@@ -184,17 +185,25 @@ export default function art({
                       <td>{product.productName}</td>
                       <td>{product.productDescription}</td>
                       <td>
-                        <div className="col-md-12 edit-button">
-                          &nbsp;
-                          <EditProduct />
-                          &nbsp;
-                          <button className="btn btn-lg btn-outline-primary custom-button-confirm-edit">
-                            Edit
-                          </button>
-                          &nbsp;
-                          <ConfirmationModal
-                            deleteArt={() => deleteArt(product.id)}
-                          />
+                        <div className="col-md-12 edit-button row">
+                          <div className="col-md-4">
+                            <SpinnWinner
+                              productName={product.productName}
+                              productLink={product.productAWSLink}
+                              retrievWinner={() => retrievWinner(product.id)}
+                              winner={winner}
+                            />
+                          </div>
+                          <div className="col-md-4">
+                            <button className="btn btn-lg btn-outline-primary custom-button-confirm-edit float-right">
+                              Edit
+                            </button>
+                          </div>
+                          <div className="col-md-4">
+                            <ConfirmationModal
+                              deleteArt={() => deleteArt(product.id)}
+                            />
+                          </div>
                         </div>
                       </td>
                     </tr>

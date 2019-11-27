@@ -40,7 +40,8 @@ class Dashboard extends Component {
       errors: {},
       isLoading: false,
       success: false,
-      failureMessage: ""
+      failureMessage: "",
+      winner: {}
     };
     this.deleteArt = this.deleteArt.bind(this);
   }
@@ -71,8 +72,7 @@ class Dashboard extends Component {
           method: "DELETE"
         })
           .then(response => console.log(response))
-          .then(data => {
-          });
+          .then(data => {});
       },
       onCancel() {}
     });
@@ -245,6 +245,18 @@ class Dashboard extends Component {
     }
   };
 
+  retrievWinner = id => {
+    const url = `${baseURL}fresh/v1/product/${id}/winner`;
+    fetch(url, {
+      method: "GET"
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.setState({ winner: data });
+      });
+  };
+
   render() {
     const { location } = this.props;
     if (location.pathname && !localStorage.getItem("token")) {
@@ -260,6 +272,7 @@ class Dashboard extends Component {
           handleSubmitArt={this.handleSubmitArt}
           handleDelete={this.handleDelete}
           deleteArt={this.deleteArt}
+          retrievWinner={this.retrievWinner}
         />
       </Fragment>
     );
