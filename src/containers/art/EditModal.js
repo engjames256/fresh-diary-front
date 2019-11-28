@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import EditModalComponent from "../../components/art/EditModal";
-import { baseURL } from "../configs/utils";
 
 export default class EditModal extends Component {
   state = { visible: false, winner: {} };

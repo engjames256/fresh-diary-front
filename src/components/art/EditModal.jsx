@@ -27,12 +27,27 @@ class EditModal extends React.Component {
           footer={null}
         >
           {winner.firstName && (
-            <div>
-              <p>
-                Name of Winner: {winner.firstName} {winner.lastName}
-              </p>
-              <p>Phone Number: {winner.phoneNumber}</p>
-              <p>Address: {winner.location}</p>
+            <div className="winner-details ">
+              <div className="winner-row">
+                <p>
+                  <strong>Name of Winner:</strong> {winner.firstName}{" "}
+                  {winner.lastName}
+                </p>
+                <p>
+                  <strong>Phone Number:</strong> {winner.phoneNumber}
+                </p>
+                <p>
+                  <strong>Location:</strong> {winner.location}
+                </p>
+              </div>
+              <div className="winner-row">
+                <p>
+                  <strong>Outlet:</strong> {winner.outlet}
+                </p>
+                <p>
+                  <strong>Reciept Number:</strong> {winner.receiptNumber}
+                </p>
+              </div>
             </div>
           )}
 
