@@ -21,7 +21,6 @@ export default function Modal() {
             </ol>
           </nav>
         </div>
-
         <div className="row">
           <div className="col-md-4">
             <div className="card">
@@ -47,7 +46,10 @@ export default function Modal() {
                     <div className="modal-dialog" role="document">
                       <div className="modal-content">
                         <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLongTitle">
+                          <h5
+                            className="modal-title"
+                            id="exampleModalLongTitle"
+                          >
                             Modal title
                           </h5>
                           <button
@@ -153,7 +155,10 @@ export default function Modal() {
                     >
                       <div className="modal-content">
                         <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalCenterTitle">
+                          <h5
+                            className="modal-title"
+                            id="exampleModalCenterTitle"
+                          >
                             Modal title
                           </h5>
                           <button
@@ -485,7 +490,10 @@ export default function Modal() {
                       <div className="modal-body">
                         <form>
                           <div className="form-group">
-                            <label for="recipient-name" className="col-form-label">
+                            <label
+                              for="recipient-name"
+                              className="col-form-label"
+                            >
                               Recipient:
                             </label>
                             <input
@@ -495,7 +503,10 @@ export default function Modal() {
                             />
                           </div>
                           <div className="form-group">
-                            <label for="message-text" className="col-form-label">
+                            <label
+                              for="message-text"
+                              className="col-form-label"
+                            >
                               Message:
                             </label>
                             <textarea
