@@ -9,6 +9,7 @@ import Modal from "./components/commons/Modal";
 import history from "./containers/configs/history";
 import Draw from "./containers/customers/Draw";
 import QRCode from "./containers/products/QRCode";
+import Footer from "./containers/commons/Footer";
 class App extends Component {
   handleLogout = () => {
     localStorage.removeItem("token");
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path="/code/:id" exact component={QRCode} />
             <Route path="/modal" exact component={Modal} />
           </Switch>
+          <Footer />
         </Router>
       </div>
     );

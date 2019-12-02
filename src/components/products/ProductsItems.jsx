@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../../assets/css/products.css";
 
 export default function ProductsItems({ products }) {
   return (
-    <div class="row row-sm">
+    <div class="row row-sm product-items">
       {products && products.length ? (
         products.map(
           ({ id, productName, productDescription, productAWSLink }) => (

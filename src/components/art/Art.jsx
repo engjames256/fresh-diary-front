@@ -182,10 +182,10 @@ export default function art({
                 {products &&
                   products.map(product => (
                     <tr key={product.id}>
-                      <td>{product.productName}</td>
+                      <td className="product-name">{product.productName}</td>
                       <td>{product.productDescription}</td>
                       <td>
-                        <div className="col-md-12 edit-button row">
+                        <div className="col-md-12 action-column row">
                           <div className="col-md-4">
                             <SpinnWinner
                               productName={product.productName}

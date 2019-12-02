@@ -2,7 +2,9 @@
 body {
   background-color: #f0f0f0;
   border: 0 !important;
-  overflow-y: hidden !important;
+  overflow-y: scroll !important;
+  margin-bottom: 0 !important;
+  min-height: 448px !important;
 }
 .main-body {
   padding-left: 0 !important;
@@ -76,4 +78,24 @@ nav.navbar .header-logo a img {
 .winner-row {
   margin: 10px;
   margin-bottom: 0px;
+}
+.action-column {
+  min-width: 400px !important;
+}
+.product-name {
+  min-width: 250px !important;
+}
+
+.navbar {
+  background-color: #343a40 !important;
+}
+nav.navbar .header-logo {
+  width: 255px !important;
+  margin-left: -10px !important;
+}
+.align-items-md-center {
+  height: 300px !important;
+}
+.h-100-vh {
+  height: 448px !important;
 }
